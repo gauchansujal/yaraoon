@@ -66,14 +66,16 @@ second_label.pack(side = TOP, expand=False, fill=BOTH)
 
 cal=DateEntry(second_label ,selectmode='day')
 
-cal.pack(side=RIGHT,padx=5,pady=1) 
+cal.pack(side=RIGHT,padx=(0,50),pady=1) 
 
 message=Message(second_label,text="Date")
 message.pack(side=RIGHT,padx=1, pady=1)
 
 def change():
+    messagebox.showinfo("", "Are you sure you want to change your plan")
     root.destroy()
     import first
+    
    
 change_button = Button(second_label, text="change in plan?", height=2, width=20,cursor = "hand2",command=change)
 change_button.pack(anchor=CENTER, padx=(25, 183))
@@ -107,37 +109,68 @@ var4=IntVar()
 sort_button.menu.add_checkbutton(label="maxinmum price to mini",variable=var1)
 sort_button.menu.add_checkbutton(label="minimum price to maximum",variable=var2)
 sort_button.menu.add_checkbutton(label="sort by time",variable=var3)
-sort_button.menu.add_checkbutton(label="want taxo",variable=var4)
+sort_button.menu.add_checkbutton(label="want taxi",variable=var4)
 sort_button.pack(side=RIGHT, padx=10)
 
 # CREATINGG BUTTON
 
-message_label= Label(frame1, width=desired_width, height=desired_height,bg="red")
+message_label= Label(frame1, width=desired_width, height=desired_height,bg="white",borderwidth=1)
 message_label.pack(side = TOP, expand=False, fill=BOTH)
 
+bus_message=Message(message_label,text="Bus type", font=("Helvetica", 14, "bold"),fg="black", bg="white", width=desired_width)
+bus_message.pack(side=LEFT,padx=(100,450),pady=8)
+
+departure_message=Message(message_label,text="Departure", font=("Helvetica", 14, "bold"),fg="black", bg="white", width=desired_width)
+departure_message.pack(side=LEFT,padx=(150,150),pady=8)
+
+fare_message=Message(message_label,text="Fare", font=("Helvetica", 14, "bold"),fg="black", bg="white", width=desired_width)
+fare_message.pack(side=LEFT,padx=(450,100),pady=8)
 
 
-bus_message=Message(message_label,text="Bus type", font=("Helvetica", 14, "bold"),fg="black", bg="red", width=desired_width)
-bus_message.pack(side=LEFT,padx=150,pady=8)
-
-departure_message=Message(message_label,text="Departure", font=("Helvetica", 14, "bold"),fg="black", bg="red", width=desired_width)
-departure_message.pack(side=LEFT,padx=300,pady=8)
-
-fare_message=Message(message_label,text="Fare", font=("Helvetica", 14, "bold"),fg="black", bg="red", width=desired_width)
-fare_message.pack(side=LEFT,padx=300,pady=8)
-
-button_label=Label(frame1, width=desired_width, height=desired_height,bg="red")
+# creating first label for button
+button_label=Label(frame1, width=desired_width, height=desired_height,bg="white",highlightbackground="black",highlightthickness=1)
 button_label.pack(side = TOP, expand=False, fill=BOTH)
  
-bus_button=Button(button_label,text="", bg='black', fg='black', height=5, width=100, padx=5, pady=5)
-bus_button.pack(side=LEFT,padx=150,pady=8)
+bus_button=Button(button_label,text="hello world ", bg='white', fg='black', height=5, width=100,borderwidth=0, activebackground="white")
+bus_button.pack(side=LEFT,padx=(100,0),pady=8)
 
-# bus2_button=Button(button_label,text="hello world", bg='white', fg='black', height=5, width=200, padx=5, pady=5).grid(row=1, column=0,padx=100,pady=8)
+bus2_button=Button(button_label,text="hello", bg='white', fg='black', height=5, width=100,borderwidth=0, activebackground="white")
+bus2_button.pack(side=LEFT,padx=0,pady=8)
 
-# bus3_button=Button(button_label,text="hello world", bg='white', fg='black', height=5, width=200, padx=5, pady=5).grid(row=2, column=0,padx=100,pady=8)
+bus3_button=Button(button_label,text="hello world", bg='white', fg='black', height=5, width=100,borderwidth=0, activebackground="white")
+bus3_button.pack(side=RIGHT,padx=(0,100),pady=8)
 
-# bus4_button=Button(button_label,text="hello world", bg='white', fg='black', height=5, width=200, padx=5, pady=5).grid(row=3, column=0,padx=100,pady=8)
+# creating second label for button
+second_button= Label(frame1, width=desired_width, height=desired_height,bg="white",highlightbackground="black",highlightthickness=1)
+second_button.pack(side = TOP, expand=False, fill=BOTH)
 
-# buy_button=Button( button_label,text="Buy ticket", bg='white', fg='black', height=5, width=30, padx=5, pady=5).grid(row=4, column=1,padx=50,pady=8)
+bus4_button=Button(second_button,text="hello world ", bg='white', fg='black', height=5, width=100,borderwidth=0, activebackground="white")
+bus4_button.pack(side=LEFT,padx=(100,0),pady=8)
+
+bus5_button=Button(second_button,text="hello", bg='white', fg='black', height=5, width=100,borderwidth=0, activebackground="white")
+bus5_button.pack(side=LEFT,padx=0,pady=8)
+
+bus6_button=Button(second_button,text="hello world", bg='white', fg='black', height=5, width=100,borderwidth=0, activebackground="white")
+bus6_button.pack(side=RIGHT,padx=(0,100),pady=8)
+
+# creating third label for button
+third_button= Label(frame1, width=desired_width, height=desired_height,bg="white",highlightbackground="black",highlightthickness=1)
+third_button.pack(side = TOP, expand=False, fill=BOTH)
+
+bus7_button=Button(third_button,text="hello world ", bg='white', fg='black', height=5, width=100,borderwidth=0, activebackground="white")
+bus7_button.pack(side=LEFT,padx=(100,0),pady=8)
+
+bus8_button=Button(third_button,text="hello", bg='white', fg='black', height=5, width=100,borderwidth=0, activebackground="white")
+bus8_button.pack(side=LEFT,padx=0,pady=8)
+
+bus9_button=Button(third_button,text="hello world", bg='white', fg='black', height=5, width=100,borderwidth=0, activebackground="white")
+bus9_button.pack(side=RIGHT,padx=(0,100),pady=8)
+
+fourth_button= Label(frame1, width=desired_width, height=desired_height,bg="white")
+fourth_button.pack(side = TOP, expand=False, fill=BOTH)
+def buy():
+    messagebox.showinfo("Ticket","Are you sure you want to book this Bus")
+buy_button=Button( fourth_button,text="Buy ticket", bg='green', fg='black', height=5, width=30, padx=5, pady=5, command=buy)
+buy_button.pack(side=RIGHT)
 
 root.mainloop()

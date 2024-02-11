@@ -70,8 +70,11 @@ b6.grid(row=4, column=0, padx=40, pady=20)
 b6_entry = Text(f, width=40, height=3)
 b6_entry.grid(row=5, column=0, padx=40, pady=20)
 
-
-b7 = Button(f, text="search Buses", background="#4aa9ed", fg="black", width=10, font=custom_font)
+def search():
+    messagebox.showinfo("", "Are you sure ?")
+    root.destroy()
+    import second
+b7 = Button(f, text="search Buses", background="#4aa9ed", fg="black", width=10, font=custom_font,command=search)
 b7.grid(row=7, column=0, padx=0, pady=40)
 
 image_path_2= r"bus.png"
