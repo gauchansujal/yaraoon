@@ -61,8 +61,8 @@ label = Label(f, bg='white',  width=desired_width, height=desired_height, anchor
 label.pack(side = TOP, expand=False, fill=BOTH)
 
 
-message=Message(label,text="choose your seat for your long travell",width=500,)
-message.pack(side=TOP,padx=100, pady=1)
+message=Message(label,text="choose your seat for your long travell",font=('Helvetica', 12),width=500)
+message.pack(side=TOP,padx=0, pady=1)
 
 label2 = Label(f, bg='#43F4FF',  width=desired_width, height=desired_height, anchor=CENTER)
 label2.pack(side = TOP, expand=False, fill=BOTH)
@@ -74,7 +74,7 @@ label2.pack(pady=7)
 click_seat= PhotoImage(file='Seat.png')
 img_label= Label(image=click_seat)
 def choose():
-    messagebox.showinfo("","are you sure you want to shoose this seat")
+    messagebox.showinfo("","are you sure you want to choose this seat")
 seat1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=1,column=0)
 seat2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=1,column=2)
 seat3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=1,column=3)
@@ -92,27 +92,26 @@ seatF7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "
 seatG8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=2,column=7)
 
 seatG9_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=3,column=0)
-seatG10_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=0)
 
-seatB1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=0)
-seatB2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=2)
-seatB3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=3)
-seatB4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=4)
-seatB6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=5) 
-seatB7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=6)
-seatB8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=7)
+seatB1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=0)
+seatB2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=2)
+seatB3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=3)
+seatB4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=4)
+seatB6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=5) 
+seatB7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=6)
+seatB8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=7)
 
-seatC1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=6,column=0)
-seatC2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=6,column=2)
-seatC3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=6,column=3)
-seatC4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=6,column=4)
-seatC6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=6,column=5) 
-seatC7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=6,column=6)
-seatC8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=6,column=7)
-seatC10_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=6,column=8)
+seatC1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=0)
+seatC2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=2)
+seatC3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=3)
+seatC4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=4)
+seatC6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=5) 
+seatC7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=6)
+seatC8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=7)
+seatC10_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=8)
 seatC11_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=8)
 
-message1=Message(label2,text="front side of bus",bg="#D3D3D3",width=500).grid(row=4,column=10)
+message1=Message(label2,text="front side of bus",background="#D3D3D3",width=500).grid(row=4,column=10)
 
 
 root.mainloop()
