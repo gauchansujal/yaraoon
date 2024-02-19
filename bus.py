@@ -4,7 +4,6 @@ from tkinter import messagebox
 
 
 
-
 root = Tk()
 root.geometry("1200x1000")
 
@@ -28,13 +27,13 @@ label.pack_propagate(False)
 label.pack(pady=7)
 
 def logout():
-    result=messagebox.showinfo("Log out","are you sure you want to log out?")
+    result=messagebox.askokcancel("Log out","Are you sure you want to log out?")
     if result:
         print("User clicked OK")
-    else:
-        print("User clicked Cancel")
         root.destroy()
         import log_in
+    else:
+        print("User clicked Cancel")
    
 button = Button(label, text="log out", bg="#D3D3D3",cursor = " hand2",command=logout)
 button.pack(side=RIGHT)
@@ -55,7 +54,7 @@ button = Button(label, text="service", bg="#D3D3D3",cursor = "  hand2", command=
 button.pack(side=RIGHT, padx=(0,30))
 
 f = Frame(frame, width= 500, height=500, highlightbackground="black", highlightthickness=2, bd=0)
-f.pack( side= TOP, fill=Y)
+f.pack( side= TOP, fill=Y, pady=100)
 
 label = Label(f, bg='white',  width=desired_width, height=desired_height, anchor=CENTER)
 label.pack(side = TOP, expand=False, fill=BOTH)
@@ -74,7 +73,13 @@ label2.pack(pady=7)
 click_seat= PhotoImage(file='Seat.png')
 img_label= Label(image=click_seat)
 def choose():
-    messagebox.showinfo("","are you sure you want to choose this seat")
+    result=messagebox.askokcancel("Log out","Are you sure you want to log out?")
+    if result:
+        print("User clicked OK")
+        
+    else:
+        print("User clicked Cancel")
+    
 seat1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=1,column=0)
 seat2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=1,column=2)
 seat3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=1,column=3)
@@ -100,6 +105,7 @@ seatB4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "
 seatB6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=5) 
 seatB7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=6)
 seatB8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=7)
+seatB8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=4,column=8)
 
 seatC1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=0)
 seatC2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=2)
@@ -108,8 +114,9 @@ seatC4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "
 seatC6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=5) 
 seatC7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=6)
 seatC8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=7)
-seatC10_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=8)
-seatC11_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=8)
+seatC9_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=8)
+seatC10_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=5,column=9)
+
 
 message1=Message(label2,text="front side of bus",background="#D3D3D3",width=500).grid(row=4,column=10)
 

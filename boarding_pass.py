@@ -26,15 +26,16 @@ label.pack_propagate(False)
 label.pack(pady=7)
 
 def logout():
-    result=messagebox.showinfo("Log out","are you sure you want to log out?")
+    result=messagebox.askokcancel("Log out","Are you sure you want to log out?")
     if result:
         print("User clicked OK")
+        root.destroy()
+        import log_in
     else:
         print("User clicked Cancel")
-    root.destroy()
-    import log_in
+    
    
-button = Button(label, text="log out", bg="#D3D3D3",cursor = " hand2",command=logout)
+button = Button(label, text="log out", bg="#D3D3D3",cursor = "hand2",command=logout)
 button.pack(side=RIGHT)
 
 def popup(): 

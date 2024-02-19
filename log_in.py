@@ -34,16 +34,13 @@ def back():
     win.destroy()
     import first
 
-
 #signinbutton
-Button(frame,width=30,pady=2,text='Sign in',bg='#57a1f8',fg='black',border=0,command=back).place(x=45,y=204)
-forgot=Button(frame,text="Forgot password?",width=10,fg='black',bg='white',font=('Microsoft YaH UI Light',9),command=back)
-forgot.place(x=250,y=235)
+Button(frame,width=50,pady=2,text='Sign in',bg='#57a1f8',fg='black',border=0,command=back).place(x=23,y=(204))
+forgot=Button(frame,text="Forgot password?",width=20,fg='black',bg='white',border=0,font=('Microsoft YaH UI Light',9),command=back)
+forgot.place(x=125,y=235)
 
 #signupbutton
-label=Label(frame,text='New here?',width=10,fg='black',bg='white',font=('Microsoft YaH UI Light',12,'underline'))
-label.place(x=135,y=273)
-sign_up= Button(frame,width=6,text='Sign up', border=0,bg='white' ,cursor='hand2',fg='#57a1f8')
+sign_up= Button(frame,width=10,text='New here?', border=0,bg='white',font=('Microsoft YaH UI Light',10,'underline') ,cursor='hand2',fg='black')
 sign_up.place(x=215,y=270)
 
 win.mainloop()
