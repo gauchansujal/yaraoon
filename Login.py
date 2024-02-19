@@ -79,13 +79,14 @@ forgot.place(x=250,y=235)
 
 #signupbutton
 label=Label(frame,text='New here?',width=10,fg='black',bg='white',font=('Microsoft YaH UI Light',12,'underline'))
-label.place(x=135,y=273)
+forgot.place(x=250,y=235)
 
-def open_registration():
-    
-    exec(open("./registration.py").read())
+def back():
+    root.destroy()
+    import registration
 
-sign_up = Button(frame,width=6,text='Sign up', border=0,bg='white' ,cursor='hand',fg='#57a1f8',command=open_registration)
+
+sign_up = Button(frame,width=6,text='Sign up', border=0,bg='white' ,cursor='hand',fg='#57a1f8',command=back)
 sign_up.place(x=215,y=270)
 
 root.mainloop()
