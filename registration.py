@@ -96,9 +96,10 @@ already_text.place(relx=0.46, rely=0.75, anchor="n")
     
 # Sign in Button
 def back():
+    result=messagebox.showinfo("login","If you already have an account, Click ok")
     root.destroy()
     import Login
-
+    
 signin_btn = Button(frame, text="Sign in", fg='black', bg='blue', font=('Microsoft YaHei UI Light', 12), border=0, command=back)
 signin_btn.place(relx=0.63, rely=0.75, anchor="n")
 
