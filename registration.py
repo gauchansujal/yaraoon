@@ -2,7 +2,6 @@ from tkinter import *
 from tkinter import messagebox
 import mysql.connector
 
-
 def register_user():
     username_val = username.get()
     password_val = password.get()
@@ -38,7 +37,7 @@ def register_user():
         cursor.close()
         connection.close()
 
-    
+
 root = Tk()
 root.title('Login')
 root.geometry('700x500+300+150')
@@ -94,8 +93,13 @@ create_btn.place(relx=0.5, rely=0.60, anchor="n")
 already_text = Label(frame, text="Already Have An Account?", fg="white", bg="black", font=('Microsoft YaHei UI Light', 12))
 already_text.place(relx=0.46, rely=0.75, anchor="n")
 
+    
 # Sign in Button
-signin_btn = Button(frame, text="Sign in", fg='black', bg='blue', font=('Microsoft YaHei UI Light', 12), border=0)
+def back():
+    root.destroy()
+    import Login
+
+signin_btn = Button(frame, text="Sign in", fg='black', bg='blue', font=('Microsoft YaHei UI Light', 12), border=0, command=back)
 signin_btn.place(relx=0.63, rely=0.75, anchor="n")
 
 root.mainloop()
