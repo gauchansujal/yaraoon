@@ -82,6 +82,7 @@ label=Label(frame,text='New here?',width=10,fg='black',bg='white',font=('Microso
 forgot.place(x=250,y=235)
 
 def back():
+    result=messagebox.showinfo("register","Click ok if you want to register")
     root.destroy()
     import registration
 
