@@ -1,11 +1,45 @@
 from tkinter import *
 from tkinter import messagebox
+import mysql.connector
+
+def authenticate_user():
+    entered_username = username.get()
+    entered_password = password.get()
+
+    # Connect to MySQL database
+    connection = mysql.connector.connect(
+        host='localhost',
+        user='pma',  
+        password='Yug12345',  
+        database='user_management'
+    )
+
+    # Create cursor
+    cursor = connection.cursor()
+
+
+    # Check if the entered credentials exist in the database
+    select_query = "SELECT * FROM users WHERE username = %s AND password = %s"
+    data = (entered_username, entered_password)
+    cursor.execute(select_query, data)
+    user = cursor.fetchone()
+
+    # Close cursor and connection
+    cursor.close()
+    connection.close()
+
+    if user:
+        messagebox.showinfo("Success", "Login successful!")
+    else:
+        messagebox.showerror("Error", "Invalid username or password")
+
 
 root=Tk()
 root.title('Login')
 root.geometry('925x500+300+200')
 root.configure(bg="#fff")
 root.resizable(False,False)
+
 
 img = PhotoImage(file='./driver.png')
 Label(root,image=img,bg="white").place(x=50,y=50)
@@ -19,11 +53,10 @@ heading.place(x=160,y=5)
 #usernamebutton
 def temp_username(e):
     username.delete(0,"end")
-    username.config(show="*")
 
 username = Entry(frame,width=30,fg='black',border=0,bg="white",font=('Microsoft YaHei UI Light',14))
 username.place(x=50,y=80)
-username.insert(0,'Email id.')
+username.insert(0,'Email id./Phone')
 username.bind("<FocusIn>", temp_username)
 
 Frame(frame,width=295,height=2,bg='black').place(x=43,y=107)
@@ -40,16 +73,19 @@ password.bind("<FocusIn>", temp_password)
 Frame(frame,width=295,height=2,bg='black').place(x=43,y=177)
 
 #signinbutton
-Button(frame,width=30,pady=2,text='Sign in',bg='#57a1f8',fg='black',border=0).place(x=45,y=204)
+Button(frame,width=30,pady=2,text='Sign in',bg='#57a1f8',fg='black',border=0, command=authenticate_user).place(x=45,y=204)
 forgot=Button(frame,text="Forgot password?",width=10,fg='black',bg='white',font=('Microsoft YaH UI Light',9))
 forgot.place(x=250,y=235)
 
 #signupbutton
 label=Label(frame,text='New here?',width=10,fg='black',bg='white',font=('Microsoft YaH UI Light',12,'underline'))
 label.place(x=135,y=273)
-sign_up= Button(frame,width=6,text='Sign up', border=0,bg='white' ,cursor='hand',fg='#57a1f8')
+
+def open_registration():
+    
+    exec(open("./registration.py").read())
+
+sign_up = Button(frame,width=6,text='Sign up', border=0,bg='white' ,cursor='hand',fg='#57a1f8',command=open_registration)
 sign_up.place(x=215,y=270)
-
-
 
 root.mainloop()
