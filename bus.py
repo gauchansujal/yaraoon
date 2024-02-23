@@ -68,18 +68,23 @@ label2.pack(side = TOP, expand=False, fill=BOTH)
 label2.pack_propagate(False)
 label2.pack(pady=7)
 
-
+#---------------------------------creating bus seat so that user can pick your seat--------------------------------------------------------------
 
 click_seat= PhotoImage(file='Seat.png')
 img_label= Label(image=click_seat)
+
+seat_buttons = {}
+
 def choose():
-    result=messagebox.askokcancel("Log out","Are you sure you want to log out?")
+    result=messagebox.askokcancel("","Are you sure you want to choose this seat")
     if result:
         print("User clicked OK")
+        root.destroy()
+        import boarding_pass
         
     else:
         print("User clicked Cancel")
-    
+
 seat1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=1,column=0)
 seat2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=1,column=2)
 seat3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=choose).grid(row=1,column=3)
@@ -119,6 +124,24 @@ seatC10_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = 
 
 
 message1=Message(label2,text="front side of bus",background="#D3D3D3",width=500).grid(row=4,column=10)
+
+
+# # Example function to create and place buttons
+# def create_button(row, column):
+#     button = Button(root, text="", bg="#D3D3D3", cursor="hand2", command=choose, image=click_seat)
+#     button.grid(row=row, column=column)
+#     return button
+
+# # Example loop to create and place buttons
+# for row, row_label in enumerate(["1", "A", "B", "C"]):
+#     for col, col_label in enumerate(["1", "2", "3", "4", "6", "7", "8", "9", "10"]):
+#         # Create button with image
+#         button = create_button(row + 1, col)
+#         button.grid(width=50, height=50, compound='top')
+#         # Store button in dictionary
+#         seat_buttons[(row_label, col_label)] = button
+
+
 
 
 root.mainloop()

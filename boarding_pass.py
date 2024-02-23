@@ -80,6 +80,8 @@ bus_message=Message(detail_label,text="Ticket Details ",font=('Helvetica',12,'un
 age=Label(detail_label,text="Age:",bg='#43F4FF',font=('Helvetica', 12)).grid(row=3, column=1)
 age_message=Message(detail_label,text="Ticket Details ",font=('Helvetica',12,'underline'), background="#43F4FF",fg="black",width=500).grid(row=3, column=2)
 
+#--------------------------------------here we make new tiket label------------------------------------------------------
+
 fare=Label(detail_label,text="Fare Rs. :",bg='#43F4FF',font=('Helvetica', 12)).grid(row=4, column=1)
 fare_message=Message(detail_label,text="Ticket Details ",font=('Helvetica',12,'underline'), background="#43F4FF",fg="black",width=500).grid(row=4, column=2)
 
@@ -107,6 +109,7 @@ from_message=Message(pass_label,text="From ",font=('Inka',12), background="#43F4
 
 
 Bus_date_message=Message(pass_label,text="Date ",font=('Inka',12), background="#43F4FF",fg="#1814D4",width=500).grid(row=3, column=2)
+
 
 bus_time_message=Message(pass_label,text="Time ",font=('Inka',12), background="#43F4FF",fg="#1814D4",width=500).grid(row=3, column=3)
 
