@@ -123,6 +123,7 @@ reaching_date_message=Message(pass_label,text="Date ",font=('Inka',12), backgrou
 
 reaching_time_message=Message(pass_label,text="Time ",font=('Inka',12), background="#43F4FF",fg="#1814D4",width=500).grid(row=4, column=3)
 
+#-------------------------------here wwe are adding qr photo to scan  --------------------------
 image_path_2= r"qr.png"
 image2 = PhotoImage(file = image_path_2)
 
@@ -136,9 +137,23 @@ qr_img= Label(pass_label, image = resized_image2,background="#43F4FF" ).grid(row
 btn_label=Label(frame,width=100,height=100,anchor=SE)
 btn_label.pack(side=RIGHT,padx=70,pady=100)
 
-send_button=Button(btn_label, text="Send it to email",font=("Helvetica",16,"bold"),background="#1893ED",fg="white")
+def email():
+    result=messagebox.askyesno('Email', "Do You Want to send pass in your email")
+    if result:
+        print("User clicked OK")
+    
+    else:
+        print("User clicked Cancel")
+
+send_button=Button(btn_label, text="Send it to email",font=("Helvetica",16,"bold"),background="#1893ED",fg="white",command=email)
 send_button.pack(side=LEFT,padx=0,pady=100)
 
+def download():
+    result=messagebox.askyesnocancel("Download","Do You Want To Download The Pass?")
+    if result:
+        print("User clicked OK")
+    else:
+        print("User clicked Cancel")
 download_button=Button(btn_label,text="Download",font=("Helvetica",16,"bold"),background="#1893ED",fg="white")
 download_button.pack(side=RIGHT,padx=10,pady=100)
 
