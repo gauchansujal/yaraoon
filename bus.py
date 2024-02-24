@@ -13,7 +13,7 @@ frame.pack(expand=TRUE, fill=BOTH)
 
 
 
-image_path = r"bus.png"
+image_path = r"bus_12.png"
 image = PhotoImage(file = image_path)
 
 desired_width = 100
@@ -21,7 +21,7 @@ desired_height = 50
 
 resized_image = image.subsample(int(image.width()/desired_width), int(image.height()/desired_height))
 
-label = Label(frame, bg='#4aa9ed',  width=desired_width, height=desired_height, image = resized_image, anchor=W)
+label = Label(frame, bg='#4aa9ed',  width=desired_width, height=100, image = resized_image, anchor=W)
 label.pack(side = TOP, expand=False, fill=BOTH)
 label.pack_propagate(False)
 label.pack(pady=7)
@@ -35,22 +35,22 @@ def logout():
     else:
         print("User clicked Cancel")
    
-button = Button(label, text="log out", bg="#D3D3D3",cursor = " hand2",command=logout)
+button = Button(label, text="log out", bg="#D3D3D3",cursor = " hand2",font=('Inter',10,"bold"),command=logout)
 button.pack(side=RIGHT)
 
 def popup(): 
     messagebox.showinfo("contac us", "987635925924")
-b3_button=Button(label, text="contact us", bg="#D3D3D3",cursor = "  hand2", command=popup)
+b3_button=Button(label, text="contact us", bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=popup)
 b3_button.pack(side=RIGHT,  padx=(0,30))
 
 def aboutus_popup():
     messagebox.showinfo("About Us","we are bus travel")
-b2_button = Button(label, text="about us", bg="#D3D3D3",cursor = "  hand2",command=aboutus_popup)
+b2_button = Button(label, text="about us", bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"),command=aboutus_popup)
 b2_button.pack(side=RIGHT, padx=(0,30))
 
 def service_showinfo():
     messagebox.showinfo("Service","We provide the best services for you")
-button = Button(label, text="service", bg="#D3D3D3",cursor = "  hand2", command=service_showinfo)
+button = Button(label, text="service", bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
 button.pack(side=RIGHT, padx=(0,30))
 
 f = Frame(frame, width= 500, height=500, highlightbackground="black", highlightthickness=2, bd=0)

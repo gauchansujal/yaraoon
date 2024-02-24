@@ -12,15 +12,14 @@ frame.pack(expand=TRUE, fill=BOTH)
 
 
 
-image_path = r"bussss.png"
+image_path = r"bus_12.png"
 image = PhotoImage(file = image_path)
 
 desired_width = 100
 desired_height = 50
 
 resized_image = image.subsample(int(image.width()/desired_width), int(image.height()/desired_height))
-
-label = Label(frame, bg='#4aa9ed',  width=desired_width, height=desired_height, image = resized_image, anchor=W)
+label = Label(frame, bg='#4aa9ed',  width=desired_width, height=100, image = resized_image, anchor=W)
 label.pack(side = TOP, expand=False, fill=BOTH)
 label.pack_propagate(False)
 label.pack(pady=7)
@@ -30,29 +29,30 @@ def logout():
     if result:
         print("User clicked OK")
         root.destroy()
-        import log_in
-    else:
-        print("User clicked Cancel")
+    import log_in2
     
-   
-button = Button(label, text="log out", bg="#D3D3D3",cursor = "hand2",command=logout)
-button.pack(side=RIGHT)
+
+button = Button(label, text="Log out",height=10,width=15,bg="#0094FF",cursor = "hand2",font=('Inter',10,"bold"),command=logout)
+button.pack(side=RIGHT,pady=25)
+
 
 def popup(): 
     messagebox.showinfo("contac us", "987635925924")
-b3_button=Button(label, text="contact us", bg="#D3D3D3",cursor = "  hand2", command=popup)
-b3_button.pack(side=RIGHT,  padx=(0,30))
+b3_button=Button(label, text="contact us",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=popup)
+b3_button.pack(side=RIGHT,  padx=(0,30),pady=25)
 
 def aboutus_popup():
     messagebox.showinfo("About Us","we are bus travel")
-b2_button = Button(label, text="about us", bg="#D3D3D3",cursor = "  hand2",command=aboutus_popup)
-b2_button.pack(side=RIGHT, padx=(0,30))
+b2_button = Button(label, text="about us", height=10,width=15,bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"),command=aboutus_popup)
+b2_button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 def service_showinfo():
     messagebox.showinfo("Service","We provide the best services for you")
-button = Button(label, text="service", bg="#D3D3D3",cursor = "  hand2", command=service_showinfo)
-button.pack(side=RIGHT, padx=(0,30))
+button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
+button.pack(side=RIGHT, padx=(0,30),pady=25)
 
+
+#------------------------------creating we frame ---------------------------
 f = Frame(frame, width= 1295, height=500, highlightbackground="black", bd=0)
 f.pack( side= TOP, fill=Y)
 
@@ -136,7 +136,7 @@ qr_img= Label(pass_label, image = resized_image2,background="#43F4FF" ).grid(row
 
 btn_label=Label(frame,width=100,height=100,anchor=SE)
 btn_label.pack(side=RIGHT,padx=70,pady=100)
-
+#-------------------asking user how do they want to save passs--------------------------
 def email():
     result=messagebox.askyesno('Email', "Do You Want to send pass in your email")
     if result:
@@ -146,7 +146,7 @@ def email():
         print("User clicked Cancel")
 
 send_button=Button(btn_label, text="Send it to email",font=("Helvetica",16,"bold"),background="#1893ED",fg="white",command=email)
-send_button.pack(side=LEFT,padx=0,pady=100)
+send_button.pack(side=LEFT,padx=0,pady=50)
 
 def download():
     result=messagebox.askyesnocancel("Download","Do You Want To Download The Pass?")
@@ -155,6 +155,6 @@ def download():
     else:
         print("User clicked Cancel")
 download_button=Button(btn_label,text="Download",font=("Helvetica",16,"bold"),background="#1893ED",fg="white")
-download_button.pack(side=RIGHT,padx=10,pady=100)
+download_button.pack(side=RIGHT,padx=10,pady=50)
 
 root.mainloop()
