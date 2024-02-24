@@ -1,7 +1,7 @@
 from tkinter import *
 from PIL import Image, ImageTk
 from tkinter import messagebox
-from tkcalendar import DateEntry
+from tkcalendar import Calendar, DateEntry
 
 
 root = Tk()
@@ -80,21 +80,19 @@ b5_entry.grid(row=3, column=0, padx=40, pady=20)
 b5_entry.insert(1.0,"Enter Destination City:\n (Eg:Pokhara)")
 b5_entry.bind("<FocusIn>",temp_2ndtext)
 
-#-------------------------------------------third-text-box---------------------------------
+#-------------------------------------------date-time-text-box---------------------------------
 
 b6 = Label(f, text="Travel Date", font=custom_font)
 b6.grid(row=4, column=0, padx=40, pady=20)
+
 def temp_calendar(e):
-    b6_entry.delete(1.0,"end-1c")
-b6_entry = Text(f, width=30, height=2, font= 20 )
-b6_entry.grid(row=5, column=0, padx=40, pady=20)
-b6_entry.insert(1.0, "Click to select date\nFormat : dd/mm/yyyy")
-b6_entry.bind("<FocusIn>",temp_calendar)
+    if b6_entry.get() == "Click to select date\nFormat : dd/mm/yyyy":
+        b6_entry.delete(1.0, "end-1c")
 
-
-b7 = Button(f, text="search Buses", background="blue", fg="black", width=10, font=custom_font)
-b7.grid(row=7, column=0, padx=0, pady=40)
-
+b6_entry = DateEntry(f, selectmode='day', width=30, height=2, font=20, calendar=Calendar)
+b6_entry.grid(row=5, column=0, padx=40, pady=10)  
+b6_entry.insert("end", "Click to select date\nFormat : dd/mm/yyyy")
+b6_entry.bind("<FocusIn>", temp_calendar)
 
 def search():
     result=messagebox.askyesno('',"Are you sure you want to choose this route ")

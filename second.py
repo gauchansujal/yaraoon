@@ -62,24 +62,8 @@ button.pack(side=RIGHT, padx=(0,30),pady=25)
 second_label = Label(frame,  width=500, height=500, anchor=CENTER)
 second_label.pack(side = TOP, expand=False, fill=BOTH) 
 
-message=Message(second_label,text="Choose your bus",fg="black",bg="#0775F5", width=200,font=("Helvetica", 14, "bold"))
+message=Message(second_label,text="Choose  Bus",fg="black", width=500,font=("Poppins", 40, "bold"))
 message.pack (side=BOTTOM,padx=100, pady=8)
-# adding menu button
-
-sort_button = Menubutton (second_label, text="sort by",fg="black",bg="#0775F5",width=15,cursor = "  hand2")
-sort_button.menu=Menu(sort_button)
-sort_button["menu"]=sort_button.menu
-
-var1=IntVar() 
-var2=IntVar()
-var3=IntVar()
-var4=IntVar()
-
-sort_button.menu.add_checkbutton(label="maxinmum price to mini",variable=var1)
-sort_button.menu.add_checkbutton(label="minimum price to maximum",variable=var2)
-sort_button.menu.add_checkbutton(label="sort by time",variable=var3)
-sort_button.menu.add_checkbutton(label="want taxi",variable=var4)
-sort_button.pack(side=BOTTOM, padx=10,anchor=E)
 
 # adding calendar  to the frame
 
@@ -117,13 +101,13 @@ frame1.pack( padx=(50,50), pady=100)
 message_label= Label(frame1, width=desired_width, height=desired_height,bg="white",borderwidth=1,anchor=CENTER)
 message_label.pack(side = TOP, expand=False, fill=BOTH)
 
-bus_message=Message(message_label,text="Bus type", font=("Helvetica", 14, "bold"),fg="black", bg="white", width=desired_width)
+bus_message=Message(message_label,text="Bus type", font=("Poppins", 20, "bold"),fg="black", bg="white", width=desired_width)
 bus_message.pack(side=LEFT,padx=(350,550),pady=8)
 
-departure_message=Message(message_label,text="Departure", font=("Helvetica", 14, "bold"),fg="black", bg="white", width=desired_width)
+departure_message=Message(message_label,text="Departure", font=("Poppins", 20, "bold"),fg="black", bg="white", width=desired_width)
 departure_message.pack(side=LEFT, padx=0, pady=8, anchor=CENTER)
 
-fare_message=Message(message_label,text="Fare", font=("Helvetica", 14, "bold"),fg="black", bg="white", width=desired_width)
+fare_message=Message(message_label,text="Fare", font=("Poppins", 20, "bold"),fg="black", bg="white", width=desired_width)
 fare_message.pack(side=RIGHT,padx=(150),pady=8)
 
 
