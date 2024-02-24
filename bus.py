@@ -8,7 +8,7 @@ root = Tk()
 root.geometry("1200x1000")
 
 my_img= ImageTk.PhotoImage(Image.open("Seat.png"))
-frame = Frame(root, highlightbackground="black", highlightthickness=2, bd=2)
+frame = Frame(root,bg="#024c6e", highlightbackground="black", highlightthickness=2, bd=2)
 frame.pack(expand=TRUE, fill=BOTH)
 
 
@@ -21,7 +21,7 @@ desired_height = 50
 
 resized_image = image.subsample(int(image.width()/desired_width), int(image.height()/desired_height))
 
-label = Label(frame, bg='#4aa9ed',  width=desired_width, height=100, image = resized_image, anchor=W)
+label = Label(frame, bg="#024c6e",  width=desired_width, height=100, image = resized_image, anchor=W)
 label.pack(side = TOP, expand=False, fill=BOTH)
 label.pack_propagate(False)
 label.pack(pady=7)
@@ -31,44 +31,48 @@ def logout():
     if result:
         print("User clicked OK")
         root.destroy()
-        import log_in
-    else:
-        print("User clicked Cancel")
-   
-logout_button = Button(label, text="log out", bg="#D3D3D3",cursor = " hand2",font=('Inter',10,"bold"),command=logout)
-logout_button.pack(side=RIGHT)
+    import log_in2
+    
+
+button = Button(label, text="Log out",height=10,width=15,bg="#0094FF",cursor = "hand2",font=('Inter',10,"bold"),command=logout)
+button.pack(side=RIGHT,pady=25)
+
 
 def popup(): 
     messagebox.showinfo("contac us", "987635925924")
-b3_button=Button(label, text="contact us", bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=popup)
-b3_button.pack(side=RIGHT,  padx=(0,30))
+b3_button=Button(label, text="contact us",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=popup)
+b3_button.pack(side=RIGHT,  padx=(0,30),pady=25)
 
 def aboutus_popup():
     messagebox.showinfo("About Us","we are bus travel")
-b2_button = Button(label, text="about us", bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"),command=aboutus_popup)
-b2_button.pack(side=RIGHT, padx=(0,30))
+b2_button = Button(label, text="about us", height=10,width=15,bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"),command=aboutus_popup)
+b2_button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 def service_showinfo():
     messagebox.showinfo("Service","We provide the best services for you")
-serrive_button = Button(label, text="service", bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
-serrive_button.pack(side=RIGHT, padx=(0,30))
+button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
+button.pack(side=RIGHT, padx=(0,30),pady=25)
 
-f = Frame(frame, width= 500, height=500, highlightbackground="black", highlightthickness=2, bd=0)
+
+#------------------------------creating new frame ---------------------------
+
+f = Frame(frame, width= 500, height=500,bg="#53D3D1", highlightbackground="black", highlightthickness=2, bd=0)
 f.pack( side= TOP, fill=Y, pady=100)
 
-label = Label(f, bg='white',  width=desired_width, height=desired_height, anchor=CENTER)
+label = Label(f,   bg="#53D3D1",width=desired_width, height=desired_height, anchor=CENTER)
 label.pack(side = TOP, expand=False, fill=BOTH)
 
 
-message=Message(label,text="choose your seat for your long travel!!",font=('Helvetica', 19,"bold"),width=500)
+message=Message(label,bg="#53D3D1",text="choose your seat for your long travel!!",font=('Helvetica', 19,"bold"),width=500)
 message.pack(side=TOP,padx=0, pady=1)
 
-label2 = Label(f, bg='#43F4FF',  width=desired_width, height=desired_height, anchor=CENTER)
+#---------------------------------creating bus seat so that user can pick your seat--------------------------------------------------------------
+
+label2 = Label(f, bg="#53D3D1",  width=desired_width, height=desired_height, anchor=CENTER)
 label2.pack(side = TOP, expand=False, fill=BOTH)
 label2.pack_propagate(False)
 label2.pack(pady=7)
 
-#---------------------------------creating bus seat so that user can pick your seat--------------------------------------------------------------
 
 click_seat= PhotoImage(file='Seat.png')
 img_label= Label(image=click_seat)

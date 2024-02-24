@@ -52,7 +52,7 @@ button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = 
 button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 
-#------------------------------creating we frame ---------------------------
+#------------------------------creating new frame ---------------------------
 f = Frame(frame, width= 1295, height=500, highlightbackground="black", bd=0)
 f.pack( side= TOP, fill=Y)
 
@@ -121,7 +121,7 @@ to_message=Message(pass_label,text="To ",font=('Inka',12), background="#43F4FF",
 
 reaching_date_message=Message(pass_label,text="Date ",font=('Inka',12), background="#43F4FF",fg="#1814D4",width=500).grid(row=4, column=2)
 
-reaching_time_message=Message(pass_label,text="Time ",font=('Inka',12), background="#43F4FF",fg="#1814D4",width=500).grid(row=4, column=3)
+reaching_time_message=Message(pass_label,text="Seat ",font=('Inka',12), background="#43F4FF",fg="#1814D4",width=500).grid(row=4, column=3)
 
 #-------------------------------here wwe are adding qr photo to scan  --------------------------
 image_path_2= r"qr.png"
