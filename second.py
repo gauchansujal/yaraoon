@@ -16,7 +16,7 @@ frame.pack(expand=TRUE, fill=BOTH)
 
 image_path = r"bus_12.png"
 image= PhotoImage(file = image_path)
-
+ 
 
 desired_width = 100
 desired_height = 50
