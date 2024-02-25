@@ -65,13 +65,15 @@ payment_label.pack(pady=7)
 
 image_esewa = PhotoImage(file="esewa.png")
 
-esewa_button = Button(payment_label, text="Pay with Esewa", font=('Inter', 10, "bold"), bg="#FBECEB", image=image_esewa, width=400,height=85,fg='black', pady=10,compound=LEFT)
+esewa_button = Button(payment_label, text="Pay with Esewa", font=('Inter', 10, "bold"), bg="#FBECEB", image=image_esewa, width=400,height=85,fg='black',pady=10,compound=LEFT)
 esewa_button.pack(side=TOP, pady=10)
 
-khalti_button=Button(payment_label,text="Pay with Khatlti",font=('Inter',10,"bold"),bg="#FBECEB",fg='black',width=50,height=5,pady=10)
+image_Khalti = PhotoImage(file="Khalti.png")
+khalti_button=Button(payment_label,text="Pay with Khatlti",font=('Inter',10,"bold"),bg="#FBECEB",image=image_Khalti, width=400,height=85,fg='black', pady=10,compound=LEFT)
 khalti_button.pack(side=TOP,pady=10)
 
-khalti_button=Button(payment_label,text="Pay with Master Card",font=('Inter',10,"bold"),bg="#FBECEB",fg='black',width=50,height=5,pady=10)
+image_mastercard= PhotoImage(file="mastercard.png")
+khalti_button=Button(payment_label,text="Pay with Master Card",font=('Inter',10,"bold"),bg="#FBECEB",image=image_mastercard, width=400,height=85,fg='black', pady=10,compound=LEFT)
 khalti_button.pack(side=TOP,pady=10)
 
 
