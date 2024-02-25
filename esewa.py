@@ -54,6 +54,8 @@ button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = 
 button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 
+#--------------------------creating a frame for payment--------------------------------------
+
 esewa_frame = Frame(frame, bg="#024c6e", highlightbackground="black", height=100)
 esewa_frame.pack(expand=TRUE, fill=BOTH)
 
@@ -74,5 +76,62 @@ esewaQR_label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
 esewa_3label = Label(esewa_frame, bg="#024c6e",  width=desired_width, height=2, text="Please don’t forget to write your name in remarks.",font=("Poppins", 20,"bold"),fg="black", anchor=CENTER)
 esewa_3label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
 
+#----------------creating update buttons----------------------------
+buttons_label = Label(esewa_frame, bg="#024c6e",  width=desired_width, height=75)
+buttons_label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
 
+def khalti_payment():
+    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+    if result:
+        print("User clicked OK")
+        root.destroy()
+        import khalti
+         
+    else:
+        print("User clicked Cancel")
+
+
+image_khalti = PhotoImage(file="khalti1.png")
+
+desired_1width=100
+desired_1height=50
+
+
+x_1subsample_factor = max(int(image_khalti.width()/desired_1width), 1)
+y_1subsample_factor = max(int(image_khalti.height()/desired_1height), 1)
+
+resized_1image = image_khalti.subsample(x_1subsample_factor, y_1subsample_factor)
+
+khalti_button=Button(buttons_label,image=resized_1image, bg="white",width=150,height=75,fg='black',compound=LEFT,command=khalti_payment)
+khalti_button.pack(side=LEFT,pady=10)
+
+#--------------------------------creating message------------------------------
+or_message=Message(buttons_label,text="OR",font=('poppins',14,"bold"),bg="#024c6e",fg='black')
+or_message.pack(side=LEFT)
+#----------------------creating update button for mastercard---------------------
+def mastercard_payment():
+    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+    if result:
+        print("User clicked OK")
+        root.destroy()
+        import mastercard
+    else:
+        print("User clicked Cancel")
+
+image_mastercard= PhotoImage(file="mastercard.png")
+mastercard_button=Button(buttons_label,bg="#FBECEB",image=image_mastercard, width=150,height=75,fg='black', pady=10,command=mastercard_payment)
+mastercard_button.pack(side=LEFT,pady=10)
+
+#----------------------creating conformation button---------------------
+def boarding_pass():
+    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+    if result:
+        print("User clicked OK")
+        root.destroy()
+        import boarding_pass
+    else:
+        print("User clicked Cancel")
+
+khalti_button=Button(buttons_label,bg="#FBECEB",text="CONFRIM", width=15,height=3,fg='black', font=("Poppins", 14,"bold"),command=boarding_pass)
+khalti_button.pack(side=RIGHT,pady=10)
 root.mainloop()

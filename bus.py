@@ -31,7 +31,10 @@ def logout():
     if result:
         print("User clicked OK")
         root.destroy()
-    import log_in2
+        import log_in2     
+    else:
+        print("User clicked Cancel")
+
     
 
 button = Button(label, text="Log out",height=10,width=15,bg="#0094FF",cursor = "hand2",font=('Inter',10,"bold"),command=logout)
