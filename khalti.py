@@ -1,6 +1,5 @@
 from tkinter import *
 from PIL import Image, ImageTk
-from tkcalendar import DateEntry
 from tkinter import messagebox
 
 

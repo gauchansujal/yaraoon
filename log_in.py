@@ -7,7 +7,6 @@ win.geometry('925x500+300+200')
 win.configure(bg="#fff")
 win.resizable(False,False)
 
-
 img = PhotoImage(file='driver.png')
 Label(win,image=img,bg="white").place(x=50,y=50)
 
@@ -32,15 +31,10 @@ Frame(frame,width=295,height=2,bg='black').place(x=43,y=177)
 
 def back():
     win.destroy()
-    import first
-
-#signinbutton
-Button(frame,width=50,pady=2,text='Sign in',bg='#57a1f8',fg='black',border=0,command=back).place(x=23,y=(204))
-forgot=Button(frame,text="Forgot password?",width=20,fg='black',bg='white',border=0,font=('Microsoft YaH UI Light',9),command=back)
-forgot.place(x=125,y=235)
+    import registration
 
 #signupbutton
-sign_up= Button(frame,width=10,text='New here?', border=0,bg='white',font=('Microsoft YaH UI Light',10,'underline') ,cursor='hand2',fg='black')
+sign_up= Button(frame,width=10,text='New here?', border=0,bg='white',font=('Microsoft YaH UI Light',10,'underline') ,cursor='hand2',fg='black',command=back)
 sign_up.place(x=215,y=270)
 
 win.mainloop()

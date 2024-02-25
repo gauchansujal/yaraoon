@@ -1,6 +1,5 @@
 from tkinter import *
 from PIL import Image, ImageTk
-from tkcalendar import DateEntry
 from tkinter import messagebox
 
 
@@ -64,15 +63,6 @@ second_label.pack(side = TOP, expand=False, fill=BOTH)
 
 message=Message(second_label,text="Choose  Bus",bg="#53D3D1",fg="black", width=500,font=("Poppins", 40, "bold"))
 message.pack (side=TOP,padx=100)
-
-# adding calendar  to the frame
-
-message=Message(second_label,text="Date",bg="#53D3D1",font=("Poppins", 16, "bold"))
-message.pack(side=LEFT,padx=5, pady=1)
-
-cal=DateEntry(second_label ,selectmode='day')
-
-cal.pack(side=LEFT,padx=10,pady=1) 
 
 
 def change():
@@ -151,15 +141,21 @@ fourth_button= Label(frame1,bg='#53D3D1', width=desired_width, height=desired_he
 fourth_button.pack(side = TOP, expand=False, fill=BOTH)
 #-------------------------buying ticket------------------------------------------------
 def buy():
-    messagebox.showinfo("Ticket","Are you sure you want to book this Bus")
-    root.destroy()
-    import bus
+    result=messagebox.askyesno("Ticket","Are you sure you want to book this Bus")
+    if result:
+        print("User clicked OK")
+        root.destroy()
+        import bus
+        
+    else:
+        print("User clicked Cancel")
+
 buy_button=Button( fourth_button,text="Buy ticket", bg='red', fg="black", font=("Poppins", 14,"bold") ,height=3, width=16,  command=buy)
 buy_button.pack(side=RIGHT,anchor=CENTER)
 
 #---------------------------------------creating a button for change in plan-------------------------
 def change():
-    result=messagebox.askyesno("Log out","Are you sure you want to log out?")
+    result=messagebox.askyesno("change","Are you sure you want to change plan?")
     if result:
         print("User clicked OK")
         root.destroy()

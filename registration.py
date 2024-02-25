@@ -42,7 +42,6 @@ root = Tk()
 root.title('Login')
 root.geometry('700x500+300+150')
 root.configure(bg="#fff")
-root.resizable(False,False)
 
 frame = Frame(root, bg="black", bd=0)
 frame.pack(expand=True, fill=BOTH)
@@ -96,10 +95,15 @@ already_text.place(relx=0.44, rely=0.75, anchor="n")
     
 # Sign in Button
 def back():
-    result=messagebox.showinfo("login","If you already have an account, Click ok")
-    root.destroy()
-    import log_in
-    
+    result=messagebox.askyesno('',"Are you sure you want to choose this route ")
+    if result:
+        print("user clicked yes")
+        root.destroy()
+        import log_in
+       
+    else:
+        print("user clicked no")
+
 signin_btn = Button(frame, text="Sign in", fg='white', bg='black', font=('karla', 12,'underline'), border=0,activebackground="black", command=back)
 signin_btn.place(relx=0.62, rely=0.75, anchor="n")
 

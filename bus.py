@@ -193,8 +193,6 @@ seatC8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "
 seat_text31="C1"
 seatC9_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text31)).grid(row=5,column=8)
 
-# seat_text32="CANT USE THIS SEAT"
-# seatC10_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text32)).grid(row=5,column=9)
 
 root.mainloop()
 

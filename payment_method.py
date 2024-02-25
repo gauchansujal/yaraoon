@@ -1,7 +1,7 @@
 from tkinter import *
 from PIL import Image, ImageTk
 from tkinter import messagebox
-from tkcalendar import Calendar, DateEntry
+
 
 
 root = Tk()

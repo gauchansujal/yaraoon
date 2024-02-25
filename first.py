@@ -1,7 +1,6 @@
 from tkinter import *
 from PIL import Image, ImageTk
 from tkinter import messagebox
-from tkcalendar import Calendar, DateEntry
 
 root = Tk()
 root.geometry("1200x1000")
@@ -83,15 +82,6 @@ b5_entry.bind("<FocusIn>",temp_2ndtext)
 
 b6 = Label(f, text="Travel Date",bg="#53D3D1", font=custom_font)
 b6.grid(row=4, column=0, padx=40, pady=20)
-
-def temp_calendar(e):
-    if b6_entry.get() == "Click to select date\nFormat : dd/mm/yyyy":
-        b6_entry.delete(1.0, "end-1c")
-
-b6_entry = DateEntry(f, selectmode='day', width=30, height=2, font=20,highlightbackground="black",highlightthickness=2, bd=2, calendar=Calendar)
-b6_entry.grid(row=5, column=0, padx=40, pady=10)  
-b6_entry.insert("end", "Click to select date\nFormat : dd/mm/yyyy")
-b6_entry.bind("<FocusIn>", temp_calendar)
 
 def search():
     result=messagebox.askyesno('',"Are you sure you want to choose this route ")
