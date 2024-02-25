@@ -99,13 +99,13 @@ message_label= Label(frame1, width=desired_width, bg="#53D3D1",height=desired_he
 message_label.pack(side = TOP, anchor=CENTER,expand=False, fill=BOTH)
 
 bus_message=Message(message_label,text="Bus type", font=("Poppins", 20, "bold"),fg="black",bg="#53D3D1", width=250)
-bus_message.pack(side=LEFT,padx=(265,300),pady=8)
+bus_message.pack(side=LEFT,padx=(100,200),pady=8)
 
 departure_message=Message(message_label,text="Departure", font=("Poppins", 20, "bold"),fg="black",bg="#53D3D1", width=250)
-departure_message.pack(side=LEFT, padx=0, pady=8, anchor=CENTER)
+departure_message.pack(side=LEFT, padx=20, pady=8, anchor=CENTER)
 
 fare_message=Message(message_label,text="Fare", font=("Poppins", 20, "bold"),fg="black",bg="#53D3D1", width=250)
-fare_message.pack(side=RIGHT,padx=(250),pady=8)
+fare_message.pack(side=RIGHT,padx=(100,160),pady=8)
 
 
 # ----------------------------------------creating first label for button----------------------------------
