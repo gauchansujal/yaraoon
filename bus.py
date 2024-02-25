@@ -53,7 +53,12 @@ def service_showinfo():
 button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
 button.pack(side=RIGHT, padx=(0,30),pady=25)
 
+text_frame=Frame(frame,width=500, height= 5,bg="#024c6e")
+text_frame.pack(side=TOP,expand=True,fill=BOTH)
 
+
+message_text=Message(text_frame, bg="#024c6e",text="Kathmandu to Pokhara ",font=('Inter',40,"bold"),width=500)
+message_text.pack(side=TOP)
 #------------------------------creating new frame ---------------------------
 
 f = Frame(frame, width= 500, height=500,bg="#53D3D1", highlightbackground="black", highlightthickness=2, bd=0)
