@@ -7,7 +7,7 @@ from tkcalendar import Calendar, DateEntry
 root = Tk()
 root.geometry("1200x1000")
 
-frame = Frame(root,bg="#024c6e", highlightbackground="black", highlightthickness=2, bd=2)
+frame = Frame(root,bg="#53D3D1", highlightbackground="black", highlightthickness=2, bd=2)
 frame.pack(expand=TRUE, fill=BOTH)
 
 
@@ -20,7 +20,7 @@ desired_height = 75
 
 resized_image = image.subsample(int(image.width()/desired_width), int(image.height()/desired_height))
 
-label = Label(frame, bg="#024c6e",  width=desired_width, height=100, image = resized_image, anchor=W)
+label = Label(frame, bg="#53D3D1",  width=desired_width, height=100, image = resized_image, anchor=W)
 label.pack(side = TOP, expand=False, fill=BOTH)
 label.pack_propagate(False)
 label.pack(pady=7)
@@ -51,14 +51,14 @@ button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 #--------------------------creating a frame for payment--------------------------------------  
 
-payment_frame=Frame(frame,bg="#024c6e",width=1000,height=1000)
+payment_frame=Frame(frame,bg="#53D3D1",width=1000,height=1000)
 payment_frame.pack(expand=False, fill=BOTH)
 
-payment_message=Message(payment_frame,text="Here, you can select any payment option to purchase a ticket." ,font=('poppins',35,"bold"),bg="#024c6e",fg='white',width=700)
+payment_message=Message(payment_frame,text="Here, you can select any payment option to purchase a ticket." ,font=('poppins',35,"bold"),bg="#53D3D1",fg='white',width=700)
 payment_message.pack()
 
 
-payment_label = Label(payment_frame, bg="#024c6e",  width=desired_width, height=100)
+payment_label = Label(payment_frame, bg="#53D3D1",  width=desired_width, height=100)
 payment_label.pack(side = LEFT, expand=False, fill=BOTH,pady=100)
 payment_label.pack_propagate(False)
 payment_label.pack(pady=7)

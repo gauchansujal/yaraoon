@@ -10,7 +10,7 @@ root.geometry("1200x1000")
 
 
 
-frame = Frame(root, bg="#024c6e", highlightbackground="black", highlightthickness=2, bd=2,height=100)
+frame = Frame(root, bg="#53D3D1", highlightbackground="black", highlightthickness=2, bd=2,height=100)
 frame.pack(expand=TRUE, fill=BOTH)
 
 
@@ -24,7 +24,7 @@ desired_height = 50
 resized_image = image.subsample(int(image.width()/desired_width), int(image.height()/desired_height))
 
 
-label = Label(frame, bg="#024c6e",  width=desired_width, height=100, image = resized_image, anchor=W)
+label = Label(frame, bg="#53D3D1",  width=desired_width, height=100, image = resized_image, anchor=W)
 label.pack(side = TOP, expand=False, fill=BOTH)
 label.pack_propagate(False)
 label.pack(pady=7)
@@ -55,7 +55,7 @@ button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 #--------------------------------------creating khalti frame-----------------------------------------------------------------------------
 
-khalti_frame = Frame(frame, bg="#024c6e", height=100)
+khalti_frame = Frame(frame, bg="#53D3D1", height=100)
 khalti_frame.pack(expand=TRUE, fill=BOTH)
 
 image_khalti = PhotoImage(file="khalti1.png")
@@ -87,15 +87,15 @@ y_subsample_factor = max(int(image_khaltiQR.height()/desired_2height), 1)
 
 resized_2image = image_khaltiQR.subsample(x_subsample_factor, y_subsample_factor)
 
-khalti_3label = Label(khalti_frame, bg="#024c6e", width=desired_2width, height=desired_2height, image=resized_2image)
+khalti_3label = Label(khalti_frame, bg="#53D3D1", width=desired_2width, height=desired_2height, image=resized_2image)
 khalti_3label.pack(side=TOP, expand=False, fill=BOTH, padx=10)
 
-esewa_4label = Label(khalti_frame, bg="#024c6e", width=desired_1width, height=2, text="Please don’t forget to write your name in remarks.", font=("Poppins", 20, "bold"), fg="black")
+esewa_4label = Label(khalti_frame, bg="#53D3D1", width=desired_1width, height=2, text="Please don’t forget to write your name in remarks.", font=("Poppins", 20, "bold"), fg="black")
 esewa_4label.pack(side=TOP, expand=False, fill=BOTH, padx=10)
 
 
 #----------------creating update buttons------------------------------------
-buttons_label = Label(khalti_frame, bg="#024c6e",  width=desired_width, height=75,anchor=CENTER)
+buttons_label = Label(khalti_frame, bg="#53D3D1",  width=desired_width, height=75,anchor=CENTER)
 buttons_label.pack(side = TOP,padx=10)
 #------------------------creating esewa button--------------------------------
 def esewa_payment():
@@ -114,7 +114,7 @@ image_esewa = PhotoImage(file="esewa.png")
 esewa_button = Button(buttons_label, bg="#FBECEB", image=image_esewa, width=150,height=75,fg='black',pady=10,compound=LEFT,command=esewa_payment)
 esewa_button.pack(side=LEFT)
 #--------------------------------creating message------------------------------
-or_message=Message(buttons_label,text="OR",font=('poppins',14,"bold"),bg="#024c6e",fg='black')
+or_message=Message(buttons_label,text="OR",font=('poppins',14,"bold"),bg="#53D3D1",fg='black')
 or_message.pack(side=LEFT)
 #-----------------------creating update button for mastercard---------------------
 def mastercard_payment():

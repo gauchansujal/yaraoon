@@ -7,7 +7,7 @@ root = Tk()
 root.geometry("1200x1000")
 
 my_img= ImageTk.PhotoImage(Image.open("Seat.png"))
-frame = Frame(root, highlightbackground="black", highlightthickness=2, bd=2)
+frame = Frame(root,bg="#53D3D1", highlightbackground="black", highlightthickness=2, bd=2)
 frame.pack(expand=TRUE, fill=BOTH)
 
 
@@ -19,7 +19,7 @@ desired_width = 100
 desired_height = 50
 
 resized_image = image.subsample(int(image.width()/desired_width), int(image.height()/desired_height))
-label = Label(frame, bg='#4aa9ed',  width=desired_width, height=100, image = resized_image, anchor=W)
+label = Label(frame, bg='#53D3D1',  width=desired_width, height=100, image = resized_image, anchor=W)
 label.pack(side = TOP, expand=False, fill=BOTH)
 label.pack_propagate(False)
 label.pack(pady=7)
@@ -53,10 +53,10 @@ button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 
 #------------------------------creating new frame ---------------------------
-f = Frame(frame, width= 1295, height=500, highlightbackground="black", bd=0)
+f = Frame(frame, bg="#53D3D1",width= 1295, height=500, highlightbackground="black", bd=0)
 f.pack( side= TOP, fill=Y)
 
-label = Label(f, bg='white',  width=500, height=300, anchor=CENTER)
+label = Label(f, bg='#53D3D1',  width=500, height=300, anchor=CENTER)
 label.pack(side = TOP, expand=False, fill=BOTH,pady=(10,150))
 
 message_label=Label(label,bg='black',  width=500, height=5, anchor=N)
@@ -134,7 +134,7 @@ resized_image2 = image2.subsample(int(image2.width()/desired_width2), int(image2
 
 qr_img= Label(pass_label, image = resized_image2,background="#43F4FF" ).grid(row=5 ,column=4)
 
-btn_label=Label(frame,width=100,height=100,anchor=SE)
+btn_label=Label(frame,bg="#53D3D1",width=100,height=100,anchor=SE)
 btn_label.pack(side=RIGHT,padx=70,pady=100)
 #-------------------asking user how do they want to save passs--------------------------
 def email():

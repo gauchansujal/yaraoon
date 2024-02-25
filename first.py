@@ -3,11 +3,10 @@ from PIL import Image, ImageTk
 from tkinter import messagebox
 from tkcalendar import Calendar, DateEntry
 
-
 root = Tk()
 root.geometry("1200x1000")
 
-frame = Frame(root,bg="#024c6e", highlightbackground="black", highlightthickness=2, bd=2)
+frame = Frame(root,bg="#53D3D1", highlightbackground="black", highlightthickness=2, bd=2)
 frame.pack(expand=TRUE, fill=BOTH)
 
 
@@ -20,7 +19,7 @@ desired_height = 75
 
 resized_image = image.subsample(int(image.width()/desired_width), int(image.height()/desired_height))
 
-label = Label(frame, bg="#024c6e",  width=desired_width, height=100, image = resized_image, anchor=W)
+label = Label(frame, bg="#53D3D1",  width=desired_width, height=100, image = resized_image, anchor=W)
 label.pack(side = TOP, expand=False, fill=BOTH)
 label.pack_propagate(False)
 label.pack(pady=7)
@@ -34,9 +33,9 @@ button = Button(label, text="sign in",height=10,width=15,bg="#0094FF",cursor = "
 button.pack(side=RIGHT,pady=25)
 
 
-def popup(): 
+def message_popup(): 
     messagebox.showinfo("contac us", "987635925924")
-b3_button=Button(label, text="contact us",height=10,width=15, bg="#D3D3D3",cursor = " hand2",font=('Inter',10,"bold"), command=popup)
+b3_button=Button(label, text="contact us",height=10,width=15, bg="#D3D3D3",cursor = " hand2",font=('Inter',10,"bold"), command=message_popup)
 b3_button.pack(side=RIGHT,  padx=(0,30),pady=25)
 
 def aboutus_popup():
@@ -49,14 +48,14 @@ def service_showinfo():
 button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
 button.pack(side=RIGHT, padx=(0,30),pady=25)
 
-f = Frame(frame, width= 500, highlightbackground="black",highlightthickness=2, bd=2,height=500,bg="#024c6e")
+f = Frame(frame, width= 500, highlightbackground="black",highlightthickness=2, bd=2,height=500,bg="#53D3D1")
 f.pack( side= RIGHT, fill=Y)
 
 custom_font= ("Helvetica", 20)
 
 #----------------------text-box----------------------------------------------------
 
-b4 = Label(f, text="leaving from ?",bg="#024c6e", font=custom_font)
+b4 = Label(f, text="leaving from ?",bg="#53D3D1", font=custom_font)
 b4.grid(row=0, column=0, padx=20, pady=22)
 
 def temp_text(e):
@@ -70,7 +69,7 @@ b4_entry.bind("<FocusIn>",temp_text)
 
 #-------------------------------------------second-text-box---------------------------------
 
-b5 = Label(f, text="going destination",bg="#024c6e", font=custom_font)
+b5 = Label(f, text="going destination",bg="#53D3D1", font=custom_font)
 b5.grid(row=2, column=0, padx=40, pady=20)
 
 def temp_2ndtext(e):
@@ -82,7 +81,7 @@ b5_entry.bind("<FocusIn>",temp_2ndtext)
 
 #-------------------------------------------date-time-text-box---------------------------------
 
-b6 = Label(f, text="Travel Date",bg="#024c6e", font=custom_font)
+b6 = Label(f, text="Travel Date",bg="#53D3D1", font=custom_font)
 b6.grid(row=4, column=0, padx=40, pady=20)
 
 def temp_calendar(e):
@@ -110,11 +109,11 @@ b7.grid(row=7, column=0, padx=0, pady=40)
 image_path_2= r"bus.png"
 image = PhotoImage(file = image_path_2)
 
-g = Frame(frame, width=500, height=500,bg="#024c6e", highlightbackground="black")
+g = Frame(frame, width=500, height=500,bg="#53D3D1", highlightbackground="black")
 g.pack(expand=TRUE, fill=BOTH)
 
 
-rrr = Label(g, image=image,bg="#024c6e")
+rrr = Label(g, image=image,bg="#53D3D1")
 rrr.pack()
 
 root.mainloop()

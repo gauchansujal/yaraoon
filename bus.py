@@ -8,7 +8,7 @@ root = Tk()
 root.geometry("1200x1000")
 
 my_img= ImageTk.PhotoImage(Image.open("Seat.png"))
-frame = Frame(root,bg="#024c6e", highlightbackground="black", highlightthickness=2, bd=2)
+frame = Frame(root,bg="#53D3D1", highlightbackground="black", highlightthickness=2, bd=2)
 frame.pack(expand=TRUE, fill=BOTH)
 
 
@@ -21,7 +21,7 @@ desired_height = 50
 
 resized_image = image.subsample(int(image.width()/desired_width), int(image.height()/desired_height))
 
-label = Label(frame, bg="#024c6e",  width=desired_width, height=100, image = resized_image, anchor=W)
+label = Label(frame, bg="#53D3D1",  width=desired_width, height=100, image = resized_image, anchor=W)
 label.pack(side = TOP, expand=False, fill=BOTH)
 label.pack_propagate(False)
 label.pack(pady=7)
@@ -56,11 +56,11 @@ def service_showinfo():
 button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
 button.pack(side=RIGHT, padx=(0,30),pady=25)
 
-text_frame=Frame(frame,width=500, height= 5,bg="#024c6e")
+text_frame=Frame(frame,width=500, height= 5,bg="#53D3D1")
 text_frame.pack(side=TOP,expand=True,fill=BOTH)
 
 
-message_text=Message(text_frame, bg="#024c6e",text="Kathmandu to Pokhara ",font=('Inter',40,"bold"),width=500)
+message_text=Message(text_frame, bg="#53D3D1",text="Kathmandu to Pokhara ",font=('Inter',40,"bold"),width=500)
 message_text.pack(side=TOP)
 #------------------------------creating new frame ---------------------------
 
@@ -91,7 +91,7 @@ def choose(text):
     if result:
         print("User clicked OK")
         root.destroy()
-        import boarding_pass
+        import payment_method
         
     else:
         print("User clicked Cancel")
