@@ -65,7 +65,7 @@ payment_label.pack(pady=7)
 #---------------------------creating esewa buttons-----------------------------------------------
 
 def esewa_payment():
-    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+    result=messagebox.askokcancel("payment","Are you sure you ?")
     if result:
         print("User clicked OK")
         root.destroy()
@@ -77,13 +77,13 @@ def esewa_payment():
     
 image_esewa = PhotoImage(file="esewa.png")
 
-esewa_button = Button(payment_label, text="Pay with Esewa", font=('poppins', 10, "bold"), bg="#FBECEB", image=image_esewa, width=400,height=85,fg='black',pady=10,compound=LEFT,command=esewa_payment)
+esewa_button = Button(payment_label, text="Pay with Esewa", font=('poppins', 10, "bold"), bg="white", image=image_esewa, width=400,height=85,fg='black',pady=10,compound=LEFT,command=esewa_payment)
 esewa_button.pack(side=TOP, pady=10)
 
 #---------------------------creating khalti buttons-------------------------------------------------------
 
 def khalti_payment():
-    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+    result=messagebox.askokcancel("payment","Are you sure you ?")
     if result:
         print("User clicked OK")
         root.destroy()
@@ -93,11 +93,21 @@ def khalti_payment():
         print("User clicked Cancel")
 
 image_Khalti = PhotoImage(file="Khalti.png")
-khalti_button=Button(payment_label,text="Pay with Khatlti",font=('poppins',10,"bold"),bg="#FBECEB",image=image_Khalti, width=400,height=85,fg='black', pady=10,compound=LEFT,command=khalti_payment)
+khalti_button=Button(payment_label,text="Pay with Khatlti",font=('poppins',10,"bold"),bg="white",image=image_Khalti, width=400,height=85,fg='black', pady=10,compound=LEFT,command=khalti_payment)
 khalti_button.pack(side=TOP,pady=10)
 
-image_mastercard= PhotoImage(file="mastercard.png")
-khalti_button=Button(payment_label,text="Pay with Master Card",font=('poppins',10,"bold"),bg="#FBECEB",image=image_mastercard, width=400,height=85,fg='black', pady=10,compound=LEFT)
+def fonepay_payment():
+    result=messagebox.askokcancel("payment","Are you sure you ?")
+    if result:
+        print("User clicked OK")
+        root.destroy()
+        import fonepay
+         
+    else:
+        print("User clicked Cancel")
+
+image_mastercard= PhotoImage(file="fonepay.png")
+khalti_button=Button(payment_label,text="Pay with fonepay",font=('poppins',10,"bold"),bg="white",image=image_mastercard, width=400,height=85,fg='black', pady=10,command=fonepay_payment,compound=LEFT)
 khalti_button.pack(side=TOP,pady=10)
 
 

@@ -80,7 +80,7 @@ buttons_label = Label(esewa_frame, bg="#53D3D1",  width=desired_width, height=75
 buttons_label.pack(side = TOP,padx=10)
 
 def khalti_payment():
-    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+    result=messagebox.askokcancel("payment","Are you sure you ?")
     if result:
         print("User clicked OK")
         root.destroy()
@@ -107,23 +107,23 @@ khalti_button.pack(side=LEFT,pady=10)
 #--------------------------------creating message------------------------------
 or_message=Message(buttons_label,text="OR",font=('poppins',14,"bold"),bg="#53D3D1",fg='black')
 or_message.pack(side=LEFT)
-#----------------------creating update button for mastercard---------------------
-def mastercard_payment():
-    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+#----------------------creating update button for fonepay---------------------
+def fonepay_payment():
+    result=messagebox.askokcancel("payment","Are you sure you ?")
     if result:
         print("User clicked OK")
         root.destroy()
-        import mastercard
+        import fonepay
     else:
         print("User clicked Cancel")
 
-image_mastercard= PhotoImage(file="mastercard.png")
-mastercard_button=Button(buttons_label,bg="#FBECEB",image=image_mastercard, width=150,height=75,fg='black', pady=10,command=mastercard_payment)
-mastercard_button.pack(side=LEFT,pady=10)
+image_fonepay= PhotoImage(file="fonepay.png")
+fonepay_button=Button(buttons_label,bg="#FBECEB",image=image_fonepay, width=150,height=75,fg='black', pady=10,command=fonepay_payment)
+fonepay_button.pack(side=LEFT,pady=10)
 
 #----------------------creating conformation button---------------------
 def boarding_pass():
-    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+    result=messagebox.askokcancel("payment","Are you sure you ?")
     if result:
         print("User clicked OK")
         root.destroy()

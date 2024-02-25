@@ -52,10 +52,44 @@ def service_showinfo():
 button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('poppins',10,"bold"), command=service_showinfo)
 button.pack(side=RIGHT, padx=(0,30),pady=25)
 
-#--------------------------------------creating khalti frame-----------------------------------------------------------------------------
 
-khalti_frame = Frame(frame, bg="#53D3D1", height=100)
-khalti_frame.pack(expand=TRUE, fill=BOTH)
+#--------------------------creating a frame for payment--------------------------------------
+
+fonepay_frame = Frame(frame, bg="#53D3D1", highlightbackground="black", height=100)
+fonepay_frame.pack(expand=TRUE, fill=BOTH)
+
+image_fonepay = PhotoImage(file="fonepay.png")
+
+
+fonepay_label = Label(fonepay_frame, bg="white",  width=desired_width, height=75, image=image_fonepay,anchor=W)
+fonepay_label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
+
+fonepay_2label = Label(fonepay_frame, bg="red",  width=desired_width, height=2, text="Please Pay Here.",font=("Poppins", 20,"bold"),fg="white", anchor=CENTER)
+fonepay_2label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
+
+
+image_fonepayQR = PhotoImage(file="esewaQR.png")
+
+fonepayQR_label = Label(fonepay_frame, bg="#53D3D1",  width=desired_width, height=500, image=image_fonepayQR,anchor=CENTER)
+fonepayQR_label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
+
+fonepay_3label = Label(fonepay_frame, bg="#53D3D1",  width=desired_width, height=2, text="Please don't forget to write your name in remarks.",font=("Poppins", 20,"bold"),fg="black", anchor=CENTER)
+fonepay_3label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
+
+#----------------creating update buttons----------------------------
+buttons_label = Label(fonepay_frame, bg="#53D3D1",  width=desired_width, height=75)
+buttons_label.pack(side = TOP,padx=10)
+
+def khalti_payment():
+    result=messagebox.askokcancel("payment","Are you sure you ?")
+    if result:
+        print("User clicked OK")
+        root.destroy()
+        import khalti
+         
+    else:
+        print("User clicked Cancel")
+
 
 image_khalti = PhotoImage(file="khalti1.png")
 
@@ -68,69 +102,27 @@ y_1subsample_factor = max(int(image_khalti.height()/desired_1height), 1)
 
 resized_1image = image_khalti.subsample(x_1subsample_factor, y_1subsample_factor)
 
-khalti_label = Label(khalti_frame, bg="white",  width=desired_width, height=75, image=resized_1image,anchor=W)
-khalti_label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
+khalti_button=Button(buttons_label,image=resized_1image, bg="white",width=150,height=75,fg='black',compound=LEFT,command=khalti_payment)
+khalti_button.pack(side=LEFT,pady=10)
 
-khalti_2label = Label(khalti_frame ,bg="#5C2E91",  width=desired_width, height=2, text="Please Pay Here.",font=("Poppins", 20,"bold"),fg="white", anchor=CENTER)
-khalti_2label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
-
-
-image_khaltiQR  = PhotoImage(file="khalti12.jpg")
-
-desired_2width=250
-desired_2height=400
-
-
-x_subsample_factor = max(int(image_khaltiQR.width()/desired_2width), 1)
-y_subsample_factor = max(int(image_khaltiQR.height()/desired_2height), 1)
-
-resized_2image = image_khaltiQR.subsample(x_subsample_factor, y_subsample_factor)
-
-khalti_3label = Label(khalti_frame, bg="#53D3D1", width=desired_2width, height=desired_2height, image=resized_2image)
-khalti_3label.pack(side=TOP, expand=False, fill=BOTH, padx=10)
-
-esewa_4label = Label(khalti_frame, bg="#53D3D1", width=desired_1width, height=2, text="Please don’t forget to write your name in remarks.", font=("Poppins", 20, "bold"), fg="black")
-esewa_4label.pack(side=TOP, expand=False, fill=BOTH, padx=10)
-
-
-#----------------creating update buttons------------------------------------
-buttons_label = Label(khalti_frame, bg="#53D3D1",  width=desired_width, height=75,anchor=CENTER)
-buttons_label.pack(side = TOP,padx=10)
-#------------------------creating esewa button--------------------------------
+#--------------------------------creating message------------------------------
+or_message=Message(buttons_label,text="OR",font=('poppins',14,"bold"),bg="#53D3D1",fg='black')
+or_message.pack(side=LEFT)
+#----------------------creating update button for esewa---------------------
 def esewa_payment():
     result=messagebox.askokcancel("payment","Are you sure you ?")
     if result:
         print("User clicked OK")
         root.destroy()
         import esewa
-             
     else:
         print("User clicked Cancel")
 
-    
-image_esewa = PhotoImage(file="esewa.png")
+image_esewa= PhotoImage(file="esewa.png")
+esewa_button=Button(buttons_label,bg="#FBECEB",image=image_esewa, width=150,height=75,fg='black', pady=10,command=esewa_payment)
+esewa_button.pack(side=LEFT,pady=10)
 
-esewa_button = Button(buttons_label, bg="#FBECEB", image=image_esewa, width=150,height=75,fg='black',pady=10,compound=LEFT,command=esewa_payment)
-esewa_button.pack(side=LEFT)
-#--------------------------------creating message------------------------------
-or_message=Message(buttons_label,text="OR",font=('poppins',14,"bold"),bg="#53D3D1",fg='black')
-or_message.pack(side=LEFT)
-#-----------------------creating update button for fonepay---------------------
-def fonepay_payment():
-    result=messagebox.askokcancel("payment","Are you sure you ?")
-    if result:
-        print("User clicked OK")
-        root.destroy()
-        import fonepay
-    else:
-        print("User clicked Cancel")
-
-image_fonepay= PhotoImage(file="fonepay.png")
-fonepay_button=Button(buttons_label,bg="white",image=image_fonepay, width=150,height=75,fg='black', pady=10,command=fonepay_payment)
-fonepay_button.pack(side=LEFT,pady=10)
-
-#-------------------------------creating conformation button--------------------------------
-
+#----------------------creating conformation button---------------------
 def boarding_pass():
     result=messagebox.askokcancel("payment","Are you sure you ?")
     if result:
