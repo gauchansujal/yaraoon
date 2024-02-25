@@ -78,7 +78,7 @@ esewa_3label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
 
 #----------------creating update buttons----------------------------
 buttons_label = Label(esewa_frame, bg="#024c6e",  width=desired_width, height=75)
-buttons_label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
+buttons_label.pack(side = TOP,padx=10)
 
 def khalti_payment():
     result=messagebox.askokcancel("Paymetn","Are you sure you ?")
@@ -132,6 +132,6 @@ def boarding_pass():
     else:
         print("User clicked Cancel")
 
-khalti_button=Button(buttons_label,bg="#FBECEB",text="CONFRIM", width=15,height=3,fg='black', font=("Poppins", 14,"bold"),command=boarding_pass)
-khalti_button.pack(side=RIGHT,pady=10)
+confrim_button=Button(buttons_label,bg="#FBECEB",text="CONFRIM", width=15,height=3,fg='black', font=("Poppins", 14,"bold"),command=boarding_pass)
+confrim_button.pack(side=RIGHT,padx=(150,0))
 root.mainloop()

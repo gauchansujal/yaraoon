@@ -93,4 +93,54 @@ khalti_3label.pack(side=TOP, expand=False, fill=BOTH, padx=10)
 esewa_4label = Label(khalti_frame, bg="#024c6e", width=desired_1width, height=2, text="Please don’t forget to write your name in remarks.", font=("Poppins", 20, "bold"), fg="black")
 esewa_4label.pack(side=TOP, expand=False, fill=BOTH, padx=10)
 
+
+#----------------creating update buttons------------------------------------
+buttons_label = Label(khalti_frame, bg="#024c6e",  width=desired_width, height=75,anchor=CENTER)
+buttons_label.pack(side = TOP,padx=10)
+#------------------------creating esewa button--------------------------------
+def esewa_payment():
+    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+    if result:
+        print("User clicked OK")
+        root.destroy()
+        import esewa
+             
+    else:
+        print("User clicked Cancel")
+
+    
+image_esewa = PhotoImage(file="esewa.png")
+
+esewa_button = Button(buttons_label, bg="#FBECEB", image=image_esewa, width=150,height=75,fg='black',pady=10,compound=LEFT,command=esewa_payment)
+esewa_button.pack(side=LEFT)
+#--------------------------------creating message------------------------------
+or_message=Message(buttons_label,text="OR",font=('poppins',14,"bold"),bg="#024c6e",fg='black')
+or_message.pack(side=LEFT)
+#-----------------------creating update button for mastercard---------------------
+def mastercard_payment():
+    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+    if result:
+        print("User clicked OK")
+        root.destroy()
+        import mastercard
+    else:
+        print("User clicked Cancel")
+
+image_mastercard= PhotoImage(file="mastercard.png")
+mastercard_button=Button(buttons_label,bg="#FBECEB",image=image_mastercard, width=150,height=75,fg='black', pady=10,command=mastercard_payment)
+mastercard_button.pack(side=LEFT,pady=10)
+
+#-------------------------------creating conformation button--------------------------------
+
+def boarding_pass():
+    result=messagebox.askokcancel("Paymetn","Are you sure you ?")
+    if result:
+        print("User clicked OK")
+        root.destroy()
+        import boarding_pass
+    else:
+        print("User clicked Cancel")
+
+confrim_button=Button(buttons_label,bg="#FBECEB",text="CONFRIM", width=15,height=3,fg='black', font=("Poppins", 14,"bold"),command=boarding_pass)
+confrim_button.pack(side=RIGHT,padx=(150,0))
 root.mainloop()
