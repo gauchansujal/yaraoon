@@ -97,19 +97,25 @@ def choose(text):
         print("User clicked Cancel")
 
 seat_text1="A7"
+seat_indicator1=Label(label2, text="").grid(row=1,column=0)
 seat1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text1)).grid(row=1,column=0)
 
+
 seat_text2="A6"
+seat_indicator2=Label(label2, text="").grid(row=1,column=2)
 seat2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text2)).grid(row=1,column=2)
 
 seat_text3="A5"
+seat_indicator3=Label(label2, text="").grid(row=1,column=3)
 seat3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text3)).grid(row=1,column=3)
 
 
 seat_text3="A4"
+seat_indicator4=Label(label2, text="").grid(row=1,column=4)
 seat4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text4)).grid(row=1,column=4)
 
 seat_text4="A3"
+seat_indicator5=Label(label2, text="").grid(row=1,column=5)
 seat6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text4)).grid(row=1,column=5) 
 
 seat_text41="A2"
