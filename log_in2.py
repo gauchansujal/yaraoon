@@ -9,7 +9,7 @@ win.configure(bg="#fff")
 
 
 img = PhotoImage(file='driver.png')
-Label(win,image=img,bg="white").place(x=50,y=50)
+Label(win,image=img,bg="white").place(x=100,y=100)
 
 frame=Frame(win,width=350,height=350,bg="white")
 frame.place(x=480,y=70)

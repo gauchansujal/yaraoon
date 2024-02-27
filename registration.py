@@ -43,19 +43,19 @@ root.title('Login')
 root.geometry('700x500+300+150')
 root.configure(bg="#fff")
 
-frame = Frame(root, bg="black", bd=0)
+frame = Frame(root, bg="#53D3D1", bd=0)
 frame.pack(expand=True, fill=BOTH)
 
 #signup
-heading = Canvas(frame, width=150, height=50, bg="black", highlightthickness=0)
+heading = Canvas(frame, width=150, height=50, bg="#53D3D1", highlightthickness=0)
 heading.place(relx=0.5, rely=0.04, anchor="n")
 heading.create_text(75, 25, text='Sign up', fill="#0775F5", font=('karla', 23, 'bold','underline'), anchor='center')
 
 #text
-heading2 = Canvas(frame, width=350, height=100, bg="black", highlightthickness=0)
+heading2 = Canvas(frame, width=350, height=100, bg="#53D3D1", highlightthickness=0)
 heading2.place(relx=0.5, rely=0.15, anchor="n")
-heading2.create_text(149, 20, text='  create an account to enjoy all the services', fill="white", font=('karla', 12), anchor='n')
-heading2.create_text(140, 40, text='with out any ads for free', fill="white", font=('karla', 12), anchor='n')
+heading2.create_text(149, 20, text='  create an account to enjoy all the services', fill="black", font=('karla', 12), anchor='n')
+heading2.create_text(140, 40, text='with out any ads for free', fill="black", font=('karla', 12), anchor='n')
 
 #enternumber
 def temp_username(e):
@@ -89,7 +89,7 @@ create_btn = Button(frame, width=18,text="Create Account", fg='black', bg='#079F
 create_btn.place(relx=0.5, rely=0.60, anchor="n")
 
 # Already Have An Account? Text
-already_text = Label(frame, text="Already Have An Account?", fg="white", bg="black", font=('karla', 12))
+already_text = Label(frame, text="Already Have An Account?", fg="black", bg="#53D3D1", font=('karla', 12))
 already_text.place(relx=0.44, rely=0.75, anchor="n")
 
     
@@ -104,7 +104,7 @@ def back():
     else:
         print("user clicked no")
 
-signin_btn = Button(frame, text="Sign in", fg='white', bg='black', font=('karla', 12,'underline'), border=0,activebackground="black", command=back)
+signin_btn = Button(frame, text="Sign in", fg="black", bg='#53D3D1', font=('karla', 12,'underline'), border=0,activebackground="black", command=back)
 signin_btn.place(relx=0.62, rely=0.75, anchor="n")
 
 root.mainloop()

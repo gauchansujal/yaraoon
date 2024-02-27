@@ -37,22 +37,22 @@ def logout():
 
     
 
-button = Button(label, text="Log out",height=10,width=15,bg="#0094FF",cursor = "hand2",font=('Inter',10,"bold"),command=logout)
+button = Button(label, text="Log out",height=10,width=9,bg="#0094FF",cursor = "hand2",font=('Inter',10,"bold"),command=logout)
 button.pack(side=RIGHT,pady=25)
 
 def message_popup(): 
     messagebox.showinfo("contac us", "Please get in touch with us right away if you have any issues with this app. Contact us at\n +977 985511133.")
-b3_button=Button(label, text="contact us",height=10,width=15, bg="#D3D3D3",cursor = " hand2",font=('Inter',10,"bold"), command=message_popup)
+b3_button=Button(label, text="contact us",height=10,width=9, bg="#D3D3D3",cursor = " hand2",font=('Inter',10,"bold"), command=message_popup)
 b3_button.pack(side=RIGHT,  padx=(0,30),pady=25)
 
 def aboutus_popup():
     messagebox.showinfo("About Us","We are travel bus; we are the first travel agency in Nepal where you may purchase a ticket to reserve a bus and travel at an affordable price throughout Nepal. By offering practical and reasonably priced bus reservation services, Travel Bus is transforming the travel sector in Nepal and facilitating individuals' exploration of the natural beauty of our nation.")
-b2_button = Button(label, text="about us", height=10,width=15,bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"),command=aboutus_popup)
+b2_button = Button(label, text="about us", height=10,width=9,bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"),command=aboutus_popup)
 b2_button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 def service_showinfo():
     messagebox.showinfo("Service","At Travel Bus, we take pride in offering the best bus reservation service in Nepal. Our software is designed to cater to the needs of both locals and visitors, providing a seamless and convenient way to schedule buses for their travels across the country.")
-button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
+button = Button(label, text="service",height=10,width=9, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
 button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 text_frame=Frame(frame,width=500, height= 5,bg="#53D3D1")
@@ -86,143 +86,162 @@ img_label= Label(image=click_seat)
 
 def choose(text):
     result=messagebox.askokcancel("",f"Are you sure you want to choose this seat {text}")
-    
     if result:
         print("User clicked OK")
         root.destroy()
         import payment_method
-        
+        choose.config("bg=red")
     else:
         print("User clicked Cancel")
-
+   
 seat_text1="A7"
-
+seat_indicator1=Label(label2,bg="red" ,height=5,width=9,text="ok").grid(row=1,column=0)
 seat1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text1)).grid(row=1,column=0)
-seat_indicator1=Label(label2,bg="red" ,height=5,width=15,text="").grid(row=1,column=0)
+
 
 seat_text2="A6"
-
+seat_indicator2=Label(label2, bg="red",height=5,width=9, text="").grid(row=1,column=2)
 seat2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text2)).grid(row=1,column=2)
-seat_indicator2=Label(label2, bg="red",height=5,width=15, text="").grid(row=1,column=2)
+
 
 
 seat_text3="A5"
+seat_indicator3=Label(label2,bg="red",height=5,width=9, text="").grid(row=1,column=3)
 seat3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text3)).grid(row=1,column=3)
-seat_indicator3=Label(label2,bg="red",height=5,width=15, text="").grid(row=1,column=3)
+
 
 seat_text3="A4"
+seat_indicator4=Label(label2, bg="red",height=5,width=9,text="").grid(row=1,column=4)
 seat4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text4)).grid(row=1,column=4)
-seat_indicator4=Label(label2, bg="red",height=5,width=15,text="").grid(row=1,column=4)
 
 
 seat_text4="A3"
+seat_indicator5=Label(label2,bg="red",height=5,width=9, text="").grid(row=1,column=5)
 seat6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text4)).grid(row=1,column=5) 
-seat_indicator5=Label(label2,bg="red",height=5,width=15, text="").grid(row=1,column=5)
 
 seat_text41="A2"
+seat_indicator6=Label(label2, bg="red",height=5,width=9,text="").grid(row=1,column=6)
 seat7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text41)).grid(row=1,column=6)
-seat_indicator6=Label(label2, bg="red",height=5,width=15,text="").grid(row=1,column=6)
+
 
 seat_text5="A1"
+seat_indicator6=Label(label2,bg="red",height=5,width=9, text="").grid(row=1,column=7)
 seat8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text5)).grid(row=1,column=7) 
-seat_indicator6=Label(label2,bg="red",height=5,width=15, text="").grid(row=1,column=7)
 
 seat_text6="B7"
+seat_indicator6=Label(label2, bg="red",height=5,width=9,text="").grid(row=2,column=0)
 seatC_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text6)).grid(row=2,column=0)
-seat_indicator6=Label(label2, bg="red",height=5,width=15,text="").grid(row=2,column=0)
+
 
 seat_text7="B6"
+seat_indicator7=Label(label2, bg="red",height=5,width=9,text="").grid(row=2,column=2)
 seatB2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text7)).grid(row=2,column=2)
-seat_indicator7=Label(label2, bg="red",height=5,width=15,text="").grid(row=2,column=2)
+
 
 seat_text8="B5"
+seat_indicator8=Label(label2, bg="red",height=5,width=9,text="").grid(row=2,column=3)
 seatC3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text8)).grid(row=2,column=3)
-seat_indicator8=Label(label2, bg="red",height=5,width=15,text="").grid(row=2,column=3)
+
 
 seat_text9="B4"
+seat_indicator9=Label(label2, bg="red",height=5,width=9,text="").grid(row=2,column=4)
 seatD4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text9)).grid(row=2,column=4)
-seat_indicator9=Label(label2, bg="red",height=5,width=15,text="").grid(row=2,column=4)
+
 
 seat_text11="B3"
+seat_indicator10=Label(label2, bg="red",height=5,width=9,text="").grid(row=2,column=5)
 seatE6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text11)).grid(row=2,column=5)
-seat_indicator10=Label(label2, bg="red",height=5,width=15,text="").grid(row=2,column=5)
+
 
 seat_text12="B2" 
+seat_indicator11=Label(label2, bg="red",height=5,width=9,text="").grid(row=2,column=6)
 seatF7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text12)).grid(row=2,column=6)
-seat_indicator11=Label(label2, bg="red",height=5,width=15,text="").grid(row=2,column=6)
 
 seat_text13="B1"
+seat_indicator12=Label(label2, bg="red",height=5,width=9,text="").grid(row=2,column=7)
 seatG8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text13)).grid(row=2,column=7)
-seat_indicator12=Label(label2, bg="red",height=5,width=15,text="").grid(row=2,column=7)
+
 
 seat_text14="C1!!! \n WE SUGGEST YOU TO CHOOSE THIS SEAT ONLY IF OTHER SEATS ARE UNAVAILABLE."
+seat_indicator14=Label(label2, bg="red",height=5,width=9,text="").grid(row=3,column=0)
 seatG9_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text14)).grid(row=3,column=0)
-seat_indicator14=Label(label2, bg="red",height=5,width=15,text="").grid(row=3,column=0)
 
-seat_text15="D8"
-seatB1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text15)).grid(row=4,column=0)
-seat_indicator15=Label(label2, bg="red",height=5,width=15,text="").grid(row=4,column=0)
+
+seat_text9="D8"
+seat_indicator9=Label(label2, bg="red",height=5,width=9,text="").grid(row=4,column=0)
+seatB1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text9)).grid(row=4,column=0)
+
 
 seat_text16="D7"
+seat_indicator16=Label(label2, bg="red",height=5,width=9,text="").grid(row=4,column=2)
 seatB2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text16)).grid(row=4,column=2)
-seat_indicator16=Label(label2, bg="red",height=5,width=15,text="").grid(row=4,column=2)
+
 
 seat_text17="D6"
+seat_indicator17=Label(label2, bg="red",height=5,width=9,text="").grid(row=4,column=3)
 seatB3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text17)).grid(row=4,column=3)
-seat_indicator17=Label(label2, bg="red",height=5,width=15,text="").grid(row=4,column=3)
+
 
 seat_text18="D5"
+seat_indicator18=Label(label2, bg="red",height=5,width=9,text="").grid(row=4,column=4)
 seatB4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text18)).grid(row=4,column=4)
-seat_indicator18=Label(label2, bg="red",height=5,width=15,text="").grid(row=4,column=4)
 
 seat_text19="D4"
+seat_indicator19=Label(label2, bg="red",height=5,width=9,text="").grid(row=4,column=5)
 seatB6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text19)).grid(row=4,column=5)
-seat_indicator19=Label(label2, bg="red",height=5,width=15,text="").grid(row=4,column=5)
 
-seat_text21="D3" 
+
+seat_text21="D3"
+seat_indicator21=Label(label2, bg="red",height=5,width=9,text="").grid(row=4,column=6) 
 seatB7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text21)).grid(row=4,column=6)
-seat_indicator21=Label(label2, bg="red",height=5,width=15,text="").grid(row=4,column=6)
+
 
 seat_text22="D2"
+seat_indicator22=Label(label2, bg="red",height=5,width=9,text="").grid(row=4,column=7)
 seatB8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text22)).grid(row=4,column=7)
-seat_indicator22=Label(label2, bg="red",height=5,width=15,text="").grid(row=4,column=7)
+
 
 seat_text23="D1"
+seat_indicator23=Label(label2, bg="red",height=5,width=9,text="").grid(row=4,column=8)
 seatB8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text23)).grid(row=4,column=8)
-seat_indicator23=Label(label2, bg="red",height=5,width=15,text="").grid(row=4,column=8)
 
 seat_text24="C8"
+seat_indicator24=Label(label2, bg="red",height=5,width=9,text="").grid(row=5,column=0)
 seatC1_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text24)).grid(row=5,column=0)
-seat_indicator24=Label(label2, bg="red",height=5,width=15,text="").grid(row=5,column=0)
 
 seat_text25="C7"
+seat_indicator25=Label(label2, bg="red",height=5,width=9,text="").grid(row=5,column=2)
 seatC2_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text25)).grid(row=5,column=2)
-seat_indicator25=Label(label2, bg="red",height=5,width=15,text="").grid(row=5,column=2)
+
 
 
 seat_text256="C6"
+seat_indicator256=Label(label2, bg="red",height=5,width=9,text="").grid(row=5,column=3)
 seatC3_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text256)).grid(row=5,column=3)
-seat_indicator256=Label(label2, bg="red",height=5,width=15,text="").grid(row=5,column=3)
 
 seat_text26="C5"
+seat_indicator26=Label(label2, bg="red",height=5,width=9,text="").grid(row=5,column=4)
 seatC4_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text26)).grid(row=5,column=4)
-seat_indicator26=Label(label2, bg="red",height=5,width=15,text="").grid(row=5,column=4)
+
 
 seat_text27="C4"
+seat_indicator27=Label(label2, bg="red",height=5,width=9,text="").grid(row=5,column=5)
 seatC6_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text27)).grid(row=5,column=5) 
-seat_indicator27=Label(label2, bg="red",height=5,width=15,text="").grid(row=5,column=5)
+
 
 seat_text28="C3"
+seat_indicator28=Label(label2, bg="red",height=5,width=9,text="").grid(row=5,column=6)
 seatC7_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text28)).grid(row=5,column=6)
-seat_indicator28=Label(label2, bg="red",height=5,width=15,text="").grid(row=5,column=6)
+
 
 seat_text29="C2"
+seat_indicator29=Label(label2, bg="red",height=5,width=9,text="").grid(row=5,column=7)
 seatC8_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text29)).grid(row=5,column=7)
-seat_indicator29=Label(label2, bg="red",height=5,width=15,text="").grid(row=5,column=7)
+
 
 seat_text31="C1"
+seat_indicator31=Label(label2, bg="red",height=5,width=9,text="").grid(row=5,column=8)
 seatC9_button = Button(label2, text="",image=click_seat, bg="#D3D3D3",cursor = "hand2",command=lambda:choose(seat_text31)).grid(row=5,column=8)
-seat_indicator31=Label(label2, bg="red",height=5,width=15,text="").grid(row=5,column=8)
 
 
 root.mainloop()

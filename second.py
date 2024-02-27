@@ -61,7 +61,7 @@ button.pack(side=RIGHT, padx=(0,30),pady=25)
 second_label = Label(frame,  width=500, height=500, bg="#53D3D1",anchor=CENTER)
 second_label.pack(side = TOP, expand=False, fill=BOTH) 
 
-message=Message(second_label,text="Choose  Bus",bg="#53D3D1",fg="black", width=500,font=("Poppins", 40, "bold"))
+message=Message(second_label,text="Choose Bus for your travel from Kathmadu to Pokhara",bg="#53D3D1",fg="black", width=500,font=("Poppins", 40, "bold"))
 message.pack (side=TOP,padx=100)
 
 
