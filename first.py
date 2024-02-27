@@ -4,6 +4,14 @@ from tkinter import messagebox
 from tkinter import ttk
 import mysql.connector
 
+def on_date_select(event):
+    selected_date = b6_entry.get()
+    save_selected_date(selected_date)
+
+def save_selected_date(selected_date):
+    with open("selected_date.txt", "w") as file:
+        file.write(selected_date)
+
 root = Tk()
 root.geometry("1200x1000")
 
@@ -72,6 +80,7 @@ b5.grid(row=2, column=0, padx=40, pady=20)
 destination=['Pokhara','Birgunj','Biratnagar','Dhangadi','Bhairawa','Chitwan','Kathmandu']
 b5_entry = ttk.Combobox(f,values=destination,width=25, height=10)
 b5_entry.set('choose your destination')
+
 b5_entry.grid(row=3, column=0, padx=40, pady=20)
 
 
@@ -85,6 +94,10 @@ date=['2024/2/24','2024/2/25','2024/2/26','2024/2/27','2024/2/28','2024/2/29','2
 b6_entry = ttk.Combobox(f, values=date, width=25, height=10, font=20)
 b6_entry.set('            -------Date-------')
 b6_entry.grid(row=5, column=0, padx=40, pady=10)  
+
+b6_entry.bind("<<ComboboxSelected>>", on_date_select)
+
+
 
 def search():
     leaving_from = b4_entry.get()
@@ -124,7 +137,7 @@ def search():
                 connection.close()
 
             root.destroy()
-            import bus
+            import second
         else:
             print("User clicked no")
 
