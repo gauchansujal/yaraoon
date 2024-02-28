@@ -102,39 +102,39 @@ fare_message.pack(side=RIGHT,padx=(100,160),pady=8)
 button_label=Label(frame1, width=desired_width, height=desired_height,bg="#002447",highlightbackground="black",highlightthickness=1)
 button_label.pack(side = TOP)
  
-bus_button=Button(button_label,text="Tourist travels ", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0, activebackground="#002447")
+bus_button=Label(button_label,text="Tourist travels ", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus_button.pack(side=LEFT,padx=(35,0),pady=1)
 
-bus2_button=Button(button_label,text="6:30 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0, activebackground="#002447")
+bus2_button=Label(button_label,text="6:30 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus2_button.pack(side=LEFT,padx=0,pady=8)
 
-bus3_button=Button(button_label,text="rs:650", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0, activebackground="#002447")
+bus3_button=Button(button_label,text="rs:650", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus3_button.pack(side=LEFT,padx=(0,35),pady=8)
 
 # ---------------------------------------creating second label for button--------------------------------------------
 second_button= Label(frame1, width=desired_width, height=desired_height,bg="#002447",highlightbackground="black",highlightthickness=1)
 second_button.pack(side = TOP)
 
-bus4_button=Button(second_button,text="Legend Gorkha ", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0, activebackground="#002447")
+bus4_button=Label(second_button,text="Legend Gorkha ", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus4_button.pack(side=LEFT,padx=(35,0),pady=8)
 
-bus5_button=Button(second_button,text="4:00 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0, activebackground="#002447")
+bus5_button=Label(second_button,text="4:00 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus5_button.pack(side=LEFT,padx=0,pady=8)
 
-bus6_button=Button(second_button,text="rs:7500", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0, activebackground="#002447")
+bus6_button=Button(second_button,text="rs:7500", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus6_button.pack(side=RIGHT,padx=(0,35),pady=8)
 
 # ----------------------------------------creating third label for button------------------------------------------------------
 third_button= Label(frame1, width=desired_width, height=desired_height,bg="#002447",highlightbackground="black",highlightthickness=1)
 third_button.pack(side = TOP)
 
-bus7_button=Button(third_button,text="Nepal travels ", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0, activebackground="#002447")
+bus7_button=Label(third_button,text="Nepal travels ", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus7_button.pack(side=LEFT,padx=(35,0),pady=8)
 
-bus8_button=Button(third_button,text="12:30 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0, activebackground="#002447")
+bus8_button=Label(third_button,text="12:30 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus8_button.pack(side=LEFT,padx=0,pady=8)
 
-bus9_button=Button(third_button,text="rs.700", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0, activebackground="#002447")
+bus9_button=Button(third_button,text="rs.700", bg='', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus9_button.pack(side=RIGHT,padx=(0,35),pady=8)
 
 fourth_button= Label(frame1,bg='#53D3D1', width=desired_width, height=desired_height)
