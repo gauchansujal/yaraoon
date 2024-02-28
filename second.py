@@ -20,7 +20,6 @@ image= PhotoImage(file = image_path)
 
 desired_width = 100
 desired_height = 50
-
 resized_image = image.subsample(int(image.width()/desired_width), int(image.height()/desired_height))
 
 
@@ -52,8 +51,14 @@ def service_showinfo():
 service_button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
 service_button.pack(side=RIGHT, padx=(0,30),pady=25)
 
+#-------------------------date--------------------------
 
 
+with open("selected_date.txt", "r") as file:
+    selected_date = file.read()
+
+labeldate= Label(frame,bg="#53D3D1",fg="black",text=f"Date: {selected_date}")
+labeldate.place(relx=0.01,rely=0.3)
 
 # we have created 2nd frame here  to put the label on it and then add scrollbar to this frame
 
