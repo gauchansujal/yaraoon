@@ -69,10 +69,35 @@ fonepay_2label = Label(fonepay_frame, bg="red",  width=desired_width, height=2, 
 fonepay_2label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
 
 
-image_fonepayQR = PhotoImage(file="esewaQR.png")
+#----------------------creating paymetn method--------------------------
+fonepaylabel = Label(fonepay_frame, bg="#53D3D1",  width=desired_width, height=500, anchor=CENTER)
+fonepaylabel.pack(side = TOP, expand=False, fill=Y,padx=10)
 
-fonepayQR_label = Label(fonepay_frame, bg="#53D3D1",  width=desired_width, height=500, image=image_fonepayQR,anchor=CENTER)
-fonepayQR_label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
+fonepay = Label(fonepaylabel,bg="#53D3D1")
+fonepay.grid(row=3,column=3, padx=40, pady=20)
+
+
+def temp_1sttext(e):
+    fonepay_entry.delete(1.0, "end-1c")
+fonepay_entry = Text(fonepay, width=30, height=2,highlightbackground="red",highlightthickness=2, bd=2)
+fonepay_entry.grid(row=3, column=6, padx=40, pady=20)
+fonepay_entry.insert(1.0,"Enter phone number")
+fonepay_entry.bind("<FocusIn>",temp_1sttext)
+
+
+def temp_2ndtext(e):
+    fonepay_password_entry.delete(1.0, "end-1c")
+fonepay_password_entry= Text(fonepay, width=30, height=2,highlightbackground="red",highlightthickness=2, bd=2)
+fonepay_password_entry.grid(row=3, column=9, padx=40, pady=20)
+fonepay_password_entry.insert(1.0,"Enter your your password")
+fonepay_password_entry.bind("<FocusIn>",temp_2ndtext)
+
+def temp_3rdtext(e):
+    fonepay_payment_entry.delete(1.0, "end-1c")
+fonepay_payment_entry= Text(fonepay, width=30, height=2,highlightbackground="red",highlightthickness=2, bd=2)
+fonepay_payment_entry.grid(row=3, column=12 , padx=40, pady=20)
+fonepay_payment_entry.insert(1.0,"Enter value")
+fonepay_payment_entry.bind("<FocusIn>",temp_3rdtext)
 
 fonepay_3label = Label(fonepay_frame, bg="#53D3D1",  width=desired_width, height=2, text="Please don't forget to write your name in remarks.",font=("Poppins", 20,"bold"),fg="black", anchor=CENTER)
 fonepay_3label.pack(side = TOP, expand=False, fill=BOTH,padx=10)

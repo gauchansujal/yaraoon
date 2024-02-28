@@ -76,19 +76,36 @@ khalti_2label = Label(khalti_frame ,bg="#5C2E91",  width=desired_width, height=2
 khalti_2label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
 
 
-image_khaltiQR  = PhotoImage(file="khalti12.jpg")
+khaltilabel = Label(khalti_frame, bg="#53D3D1",  width=desired_width, height=500, anchor=CENTER)
+khaltilabel.pack(side = TOP, expand=False, fill=Y,padx=10)
 
-desired_2width=250
-desired_2height=400
+fonepay = Label(khaltilabel,bg="#53D3D1")
+fonepay.grid(row=3,column=3, padx=40, pady=20)
 
 
-x_subsample_factor = max(int(image_khaltiQR.width()/desired_2width), 1)
-y_subsample_factor = max(int(image_khaltiQR.height()/desired_2height), 1)
+def temp_1sttext(e):
+    khalti_entry.delete(1.0, "end-1c")
+khalti_entry = Text(fonepay, width=30, height=2,highlightbackground="#5C2E91",highlightthickness=2, bd=2)
+khalti_entry.grid(row=3, column=6, padx=40, pady=20)
+khalti_entry.insert(1.0,"Enter phone number")
+khalti_entry.bind("<FocusIn>",temp_1sttext)
 
-resized_2image = image_khaltiQR.subsample(x_subsample_factor, y_subsample_factor)
 
-khalti_3label = Label(khalti_frame, bg="#53D3D1", width=desired_2width, height=desired_2height, image=resized_2image)
-khalti_3label.pack(side=TOP, expand=False, fill=BOTH, padx=10)
+def temp_2ndtext(e):
+    khalti_password_entry.delete(1.0, "end-1c")
+khalti_password_entry= Text(fonepay, width=30, height=2,highlightbackground="#5C2E91",highlightthickness=2, bd=2)
+khalti_password_entry.grid(row=3, column=9, padx=40, pady=20)
+khalti_password_entry.insert(1.0,"Enter your your password")
+khalti_password_entry.bind("<FocusIn>",temp_2ndtext)
+
+def temp_3rdtext(e):
+    khalit_payment_entry.delete(1.0, "end-1c")
+khalit_payment_entry= Text(fonepay, width=30, height=2,highlightbackground="#5C2E91",highlightthickness=2, bd=2)
+khalit_payment_entry.grid(row=3, column=12 , padx=40, pady=20)
+khalit_payment_entry.insert(1.0,"Enter value")
+khalit_payment_entry.bind("<FocusIn>",temp_3rdtext)
+
+
 
 esewa_4label = Label(khalti_frame, bg="#53D3D1", width=desired_1width, height=2, text="Please don’t forget to write your name in remarks.", font=("Poppins", 20, "bold"), fg="black")
 esewa_4label.pack(side=TOP, expand=False, fill=BOTH, padx=10)

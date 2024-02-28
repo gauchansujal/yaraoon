@@ -67,11 +67,34 @@ esewa_label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
 esewa_2label = Label(esewa_frame, bg="#3FC90F",  width=desired_width, height=2, text="Please Pay Here.",font=("Poppins", 20,"bold"),fg="white", anchor=CENTER)
 esewa_2label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
 
+esewalabel = Label(esewa_frame, bg="#53D3D1",  width=desired_width, height=500, anchor=CENTER)
+esewalabel.pack(side = TOP, expand=False, fill=Y,padx=10)
 
-image_esewaQR = PhotoImage(file="esewaQR.png")
+esewalabel = Label(esewalabel,bg="#53D3D1")
+esewalabel.grid(row=3,column=3, padx=40, pady=20)
 
-esewaQR_label = Label(esewa_frame, bg="#53D3D1",  width=desired_width, height=500, image=image_esewaQR,anchor=CENTER)
-esewaQR_label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
+
+def temp_1sttext(e):
+    esewalabel_enter.delete(1.0, "end-1c")
+esewalabel_enter = Text(esewalabel, width=30, height=2,highlightbackground="#3FC90F",highlightthickness=2, bd=2)
+esewalabel_enter.grid(row=3, column=6, padx=40, pady=20)
+esewalabel_enter.insert(1.0,"Enter phone number")
+esewalabel_enter.bind("<FocusIn>",temp_1sttext)
+
+
+def temp_2ndtext(e):
+    esewa_password_entry.delete(1.0, "end-1c")
+esewa_password_entry= Text(esewalabel, width=30, height=2,highlightbackground="#3FC90F",highlightthickness=2, bd=2)
+esewa_password_entry.grid(row=3, column=9, padx=40, pady=20)
+esewa_password_entry.insert(1.0,"Enter your your password")
+esewa_password_entry.bind("<FocusIn>",temp_2ndtext)
+
+def temp_3rdtext(e):
+    esewa_payment_entry.delete(1.0, "end-1c")
+esewa_payment_entry= Text(esewalabel,width=30, height=2,highlightbackground="#3FC90F",highlightthickness=2, bd=2)
+esewa_payment_entry.grid(row=3, column=12 , padx=40, pady=20)
+esewa_payment_entry.insert(1.0,"Enter value")
+esewa_payment_entry.bind("<FocusIn>",temp_3rdtext)
 
 esewa_3label = Label(esewa_frame, bg="#53D3D1",  width=desired_width, height=2, text="Please don’t forget to write your name in remarks.",font=("Poppins", 20,"bold"),fg="black", anchor=CENTER)
 esewa_3label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
