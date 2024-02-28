@@ -73,21 +73,29 @@ detail_label=Label(label,bg='white', height=100,width=50, highlightbackground="b
 detail_label.pack(side=LEFT, fill=Y) 
 
 
-date=Label(detail_label,text="Date:",bg='white', font=("Poppins", 14,"bold")).grid(row=1, column=1)
-date_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=1, column=2)
+Name=Label(detail_label,text="Name:",bg='white', font=("Poppins", 14,"bold")).grid(row=1, column=1)
+Name_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=1, column=2)
+
+seatmo=Label(detail_label,text="seat no:",bg='white', font=("Poppins", 14,"bold")).grid(row=2, column=1)
+seatmo_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=2, column=2)
+
+Destination=Label(detail_label,text="Destination:",bg='white', font=("Poppins", 14,"bold")).grid(row=4, column=1)
+Destination_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=4, column=2)
+
+Date=Label(detail_label,text="Date:",bg='white', font=("Poppins", 14,"bold")).grid(row=5, column=1)
+Date_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=5, column=2)
+
+Phone=Label(detail_label,text="Phone:",bg='white', font=("Poppins", 14,"bold")).grid(row=1, column=4)
+Phone_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=1, column=5)
 
 
-bus=Label(detail_label,text="Bus No. :",bg='white', font=("Poppins", 14,"bold")).grid(row=2, column=1)
-bus_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=2, column=2)
+Bus=Label(detail_label,text="Bus:",bg='white', font=("Poppins", 14,"bold")).grid(row=2, column=4)
+Bus_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=2, column=5)
 
-Name=Label(detail_label,text="Name:",bg='white', font=("Poppins", 14,"bold")).grid(row=3, column=1)
-Name_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=3, column=2)
 
-age=Label(detail_label,text="Age:",bg='white', font=("Poppins", 14,"bold")).grid(row=3, column=1)
-age_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=3, column=2)
+price=Label(detail_label,text="price:",bg='white', font=("Poppins", 14,"bold")).grid(row=2, column=4)
+price_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=2, column=5)
 
-age=Label(detail_label,text="Age:",bg='white', font=("Poppins", 14,"bold")).grid(row=3, column=1)
-age_message=Message(detail_label,text="Ticket Details ", font=("Poppins", 14,"bold",'underline'), background="white",fg="black",width=500).grid(row=3, column=2)
 
 
 #-------------------------------here wwe are adding qr photo to scan  --------------------------
