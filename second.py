@@ -61,7 +61,7 @@ button.pack(side=RIGHT, padx=(0,30),pady=25)
 second_label = Label(frame,  width=500, height=500, bg="#53D3D1",anchor=CENTER)
 second_label.pack(side = TOP, expand=False, fill=BOTH) 
 
-message=Message(second_label,text="Choose Bus for your travel from Kathmadu to Pokhara",bg="#53D3D1",fg="black", width=500,font=("Poppins", 40, "bold"))
+message=Message(second_label,text="Choose Bus for your travel ",bg="#53D3D1",fg="black", width=500,font=("Poppins", 40, "bold"))
 message.pack (side=TOP,padx=100)
 
 
@@ -108,7 +108,7 @@ bus_button.pack(side=LEFT,padx=(35,0),pady=1)
 bus2_button=Label(button_label,text="6:30 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus2_button.pack(side=LEFT,padx=0,pady=8)
 
-bus3_button=Button(button_label,text="rs:650", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
+bus3_button=Button(button_label,text="rs:650", bg='green', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus3_button.pack(side=LEFT,padx=(0,35),pady=8)
 
 # ---------------------------------------creating second label for button--------------------------------------------
@@ -121,7 +121,7 @@ bus4_button.pack(side=LEFT,padx=(35,0),pady=8)
 bus5_button=Label(second_button,text="4:00 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus5_button.pack(side=LEFT,padx=0,pady=8)
 
-bus6_button=Button(second_button,text="rs:7500", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
+bus6_button=Button(second_button,text="rs:7500", bg='green', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus6_button.pack(side=RIGHT,padx=(0,35),pady=8)
 
 # ----------------------------------------creating third label for button------------------------------------------------------
@@ -134,24 +134,24 @@ bus7_button.pack(side=LEFT,padx=(35,0),pady=8)
 bus8_button=Label(third_button,text="12:30 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus8_button.pack(side=LEFT,padx=0,pady=8)
 
-bus9_button=Button(third_button,text="rs.700", bg='', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
+bus9_button=Button(third_button,text="rs.700", bg='green', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
 bus9_button.pack(side=RIGHT,padx=(0,35),pady=8)
 
 fourth_button= Label(frame1,bg='#53D3D1', width=desired_width, height=desired_height)
 fourth_button.pack(side = TOP, expand=False, fill=BOTH)
-#-------------------------buying ticket------------------------------------------------
-def buy():
-    result=messagebox.askyesno("Ticket","Are you sure you want to book this Bus")
-    if result:
-        print("User clicked OK")
-        root.destroy()
-        import bus
+# #-------------------------buying ticket------------------------------------------------
+# def buy():
+#     result=messagebox.askyesno("Ticket","Are you sure you want to book this Bus")
+#     if result:
+#         print("User clicked OK")
+#         root.destroy()
+#         import bus
         
-    else:
-        print("User clicked Cancel")
+#     else:
+#         print("User clicked Cancel")
 
-buy_button=Button( fourth_button,text="Buy ticket", bg='red', fg="black", font=("Poppins", 14,"bold") ,height=3, width=16,  command=buy)
-buy_button.pack(side=RIGHT,anchor=CENTER)
+# buy_button=Button( fourth_button,text="Buy ticket", bg='red', fg="black", font=("Poppins", 14,"bold") ,height=3, width=16,  command=buy)
+# buy_button.pack(side=RIGHT,anchor=CENTER)
 
 #---------------------------------------creating a button for change in plan-------------------------
 def change():

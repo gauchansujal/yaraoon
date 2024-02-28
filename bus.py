@@ -68,7 +68,7 @@ f.pack( side= TOP, fill=Y ,padx=100)
 
 #---------------------------------creating bus seat so that user can pick your seat--------------------------------------------------------------
 
-label2 = Label(f, bg="#53D3D1",  width=desired_width, height=desired_height)
+label2 = Label(f, bg="#53D3D1",  width=500, height=desired_height)
 label2.pack(side = TOP, expand=False, fill=BOTH)
 label2.pack_propagate(False)
 label2.pack(pady=7)
@@ -234,9 +234,8 @@ seatC9_button = Button(label2, text="C1", bg="#D3D3D3",cursor = "hand2",command=
 
 
 #------------------------------------------creating combo box-----------------------------------
-frame2=Label(frame,bg="#53D3D1",  width=desired_width, height=desired_height)
-frame2.pack(side = TOP, expand=False, fill=BOTH)
-frame2.pack_propagate(False)
+frame2=Label(text_frame,bg="#53D3D1",  width=desired_width, height=desired_height)
+frame2.pack(side = RIGHT, expand=False, fill=BOTH)
 frame2.pack(pady=7)
 
 ttk.Label(frame2, text = "Your seat :",background="#53D3D1" ,font = ("Poppins", 18,"bold"), ).pack()
