@@ -4,14 +4,6 @@ from tkinter import messagebox
 from tkinter import ttk
 import mysql.connector
 
-def on_date_select(event):
-    selected_date = b6_entry.get()
-    save_selected_date(selected_date)
-
-def save_selected_date(selected_date):
-    with open("selected_date.txt", "w") as file:
-        file.write(selected_date)
-
 root = Tk()
 root.geometry("1200x1000")
 
@@ -61,16 +53,46 @@ f.pack( side= RIGHT, fill=Y)
 
 custom_font= ("Helvetica", 20)
 
+#----------------------datastorage-------------------------------------------------
+
+#date
+def on_date_select(event):
+    selected_date = b6_entry.get()
+    save_selected_date(selected_date)
+
+def save_selected_date(selected_date):
+    with open("selected_date.txt", "w") as file:
+        file.write(selected_date)
+
+#leaving
+def on_leave_select(event):
+    selected_leave = b4_entry.get()
+    save_selected_leave(selected_leave)
+
+def save_selected_leave(selected_leave):
+    with open("leaving.txt", "w") as file:
+        file.write(selected_leave)
+
+#destination
+def on_dest_select(event):
+    selected_dest = b5_entry.get()
+    save_selected_dest(selected_dest)
+
+def save_selected_dest(selected_dest):
+    with open("destination.txt", "w") as file:
+        file.write(selected_dest)
+
 #----------------------text-box----------------------------------------------------
 
 b4 = Label(f, text="leaving from ?", font=custom_font)
 b4.grid(row=0, column=0, padx=20, pady=22)
 
 leaving=['Kathmandu','Pokhara','Birgunj','Biratnagar','Dhangadi','Bhairawa','Chitwan',]
-b4_entry = ttk.Combobox(f, values=leaving,width=25, height=10)
+b4_entry = ttk.Combobox(f, values=leaving,width=25, height=10,state="readonly")
 b4_entry.set('Leaving from?')
 b4_entry.grid( row=1, column=0, padx=40, pady=20)
 
+b4_entry.bind("<<ComboboxSelected>>", on_leave_select)
 
 #-------------------------------------------second-text-box---------------------------------
 
@@ -78,11 +100,12 @@ b5 = Label(f, text="going destination", font=custom_font)
 b5.grid(row=2, column=0, padx=40, pady=20)
 
 destination=['Pokhara','Birgunj','Biratnagar','Dhangadi','Bhairawa','Chitwan','Kathmandu']
-b5_entry = ttk.Combobox(f,values=destination,width=25, height=10)
+b5_entry = ttk.Combobox(f,values=destination,width=25, height=10,state="readonly")
 b5_entry.set('choose your destination')
 
 b5_entry.grid(row=3, column=0, padx=40, pady=20)
 
+b5_entry.bind("<<ComboboxSelected>>", on_dest_select)
 
 #-------------------------------------------date-time-text-box---------------------------------
 
@@ -91,14 +114,14 @@ b6.grid(row=4, column=0, padx=40, pady=20)
 
 #datebutton
 date=['2024/2/24','2024/2/25','2024/2/26','2024/2/27','2024/2/28','2024/2/29','2024/3/01','2024/3/02']
-b6_entry = ttk.Combobox(f, values=date, width=25, height=10, font=20)
+b6_entry = ttk.Combobox(f, values=date, width=25, height=10, font=20,state="readonly")
 b6_entry.set('            -------Date-------')
 b6_entry.grid(row=5, column=0, padx=40, pady=10)  
 
 b6_entry.bind("<<ComboboxSelected>>", on_date_select)
 
 
-
+#-------database--------
 def search():
     leaving_from = b4_entry.get()
     going_destination = b5_entry.get()
