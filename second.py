@@ -4,19 +4,12 @@ from tkinter import messagebox
 
 
 root = Tk()
-
 root.geometry("1200x1000")
-
-
 
 frame = Frame(root, bg="#53D3D1", highlightbackground="black", highlightthickness=2, bd=2,height=100)
 frame.pack(expand=TRUE, fill=BOTH)
 
-with open("selected_date.txt", "r") as file:
-    selected_date = file.read()
 
-labeldate= Label(frame,bg="#53D3D1",fg="black",text=f"Date: {selected_date}")
-labeldate.place(relx=0.01,rely=0.3)
 
 image_path = r"logo.png"
 image= PhotoImage(file = image_path)
@@ -56,8 +49,12 @@ def service_showinfo():
 button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
 button.pack(side=RIGHT, padx=(0,30),pady=25)
 
+#datebutton
+with open("selected_date.txt", "r") as file:
+    selected_date = file.read()
 
-
+labeldate= Label(frame,bg="#53D3D1",fg="black",text=f"Date: {selected_date}")
+labeldate.place(relx=0.01,rely=0.3)
 
 # we have created 2nd frame here  to put the label on it and then add scrollbar to this frame
 
