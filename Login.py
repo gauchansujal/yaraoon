@@ -32,6 +32,8 @@ def authenticate_user():
         messagebox.showinfo("Success", "Login successful!")
     else:
         messagebox.showerror("Error", "Invalid username or password")
+    root.destroy()
+    import payment_method
 
 
 root=Tk()
@@ -74,20 +76,13 @@ Frame(frame,width=295,height=2,bg='black').place(x=43,y=177)
 
 #signinbutton
 Button(frame,width=30,pady=2,text='Sign in',bg='#57a1f8',fg='black',border=0, command=authenticate_user).place(x=45,y=204)
-forgot=Button(frame,text="Forgot password?",width=10,fg='black',bg='white',font=('Microsoft YaH UI Light',9))
-forgot.place(x=250,y=235)
 
 #signupbutton
-label=Label(frame,text='New here?',width=10,fg='black',bg='white',font=('Microsoft YaH UI Light',12,'underline'))
-forgot.place(x=250,y=235)
-
 def back():
-    result=messagebox.showinfo("register","Click ok if you want to register")
-    root.destroy()
     import registration
 
 
-sign_up = Button(frame,width=6,text='Sign up', border=0,bg='white' ,cursor='hand',fg='#57a1f8',command=back)
-sign_up.place(x=215,y=270)
+sign_up = Button(frame,width=6,text='New here?', border=0,bg='white' ,cursor='hand',fg='#57a1f8',command=back)
+sign_up.place(x=255,y=250)
 
 root.mainloop()
