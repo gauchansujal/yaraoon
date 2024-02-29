@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 
+
 win=Tk()
 win.title('Login')
 win.geometry('925x500+300+200')
@@ -30,8 +31,19 @@ password.insert(0,'Password')
 Frame(frame,width=295,height=2,bg='black').place(x=43,y=177)
 #insidebaki
 
+def login():
+    result = messagebox.askyesno('Log in', "Do you want to continue?")
+    if result:
+        print("User clicked yes")
+        win.destroy()
+        import second
+    
+    else:
+            print("User clicked no")
+
 def back():
-    result=messagebox.askyesno('',"")
+    result = messagebox.askyesno('', "Do you want o the registration window?")
+
     if result:
         print("user clicked yes")
         win.destroy()
@@ -41,7 +53,7 @@ def back():
         print("user clicked no")
 
 #signinbutton
-Button(frame,width=50,pady=2,text='Sign in',bg='#57a1f8',fg='black',border=0,command=back).place(x=23,y=(204))
+Button(frame,width=50,pady=2,text='Sign in',bg='#57a1f8',fg='black',border=0,command=login).place(x=23,y=(204))
 #signupbutton
 sign_up= Button(frame,width=10,text='New here?', border=0,bg='white',font=('Microsoft YaH UI Light',10,'underline') ,cursor='hand2',fg='black',command=back)
 sign_up.place(x=215,y=270)
