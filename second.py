@@ -94,8 +94,8 @@ def choose(text,button):
     result=messagebox.askokcancel("",f"Are you sure you want to choose this buss {text}")
     if result:
         print("User clicked OK")
-        combo.set(text)
-        button.configure(bg="red", fg="yellow")
+        root.destroy()
+        import bus
     else:
         print("User clicked Cancel")
    
@@ -179,25 +179,5 @@ frame2.pack(pady=7)
 
 change_button = Button(frame2, text="change in plan?", bg="#FEB249",cursor = "hand2",font=("Poppins", 14,"bold") ,height=3, width=16,command=change,activebackground="red")
 change_button.pack(side=RIGHT,pady=9)
-ttk.Label(frame2, text = "Your bus :",background="#53D3D1" ,font = ("Poppins", 18,"bold"), ).pack()
-combo = ttk.Combobox(frame2, values=["Legend Gorkha","Nepal travels ","Tourist travels "], state='readonly')
-combo.pack()
-def option_selected(event):
-   
-   selected_option = combo.get()
-   print("You selected:", selected_option)
-combo.bind("<<ComboboxSelected>>", option_selected)
-
-def change():
-    selected_option = combo.get()
-    result=messagebox.askyesno("change",f"Are you sure you want Buy {selected_option} ?")
-    if result:
-        print("User clicked OK")
-        root.destroy()
-        import payment_method
-    else:
-        print("User clicked Cancel")
-buy_button = Button(frame2 ,text="Buy ticket?", bg="#FEB249",cursor = "hand2",font=("Poppins", 14,"bold") ,height=3, width=16,command=change,activebackground="red")
-buy_button.pack(side=RIGHT)
 
 root.mainloop()

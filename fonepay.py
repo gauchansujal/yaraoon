@@ -1,6 +1,7 @@
 from tkinter import *
 from PIL import Image, ImageTk
 from tkinter import messagebox
+from tkinter import ttk
 
 
 root = Tk()
@@ -33,9 +34,8 @@ def login2():
     import log_in2
     
 
-button = Button(label, text="sign in",height=10,width=15,bg="#0094FF",cursor = "hand2",font=('poppins',10,"bold"),command=login2)
-button.pack(side=RIGHT,pady=25)
-
+sign_inbutton = Button(label, text="sign in",height=10,width=15,bg="#0094FF",cursor = "hand2",font=('Inter',10,"bold"),command=login2)
+sign_inbutton.pack(side=RIGHT,pady=25)
 
 def message_popup(): 
     messagebox.showinfo("contac us", "Please get in touch with us right away if you have any issues with this app. Contact us at\n +977 985511133.")
@@ -49,115 +49,150 @@ b2_button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 def service_showinfo():
     messagebox.showinfo("Service","At Travel Bus, we take pride in offering the best bus reservation service in Nepal. Our software is designed to cater to the needs of both locals and visitors, providing a seamless and convenient way to schedule buses for their travels across the country.")
-button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
-button.pack(side=RIGHT, padx=(0,30),pady=25)
+service_button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
+service_button.pack(side=RIGHT, padx=(0,30),pady=25)
 
 
 
-#--------------------------creating a frame for payment--------------------------------------
 
-fonepay_frame = Frame(frame, bg="#53D3D1", highlightbackground="black", height=100)
-fonepay_frame.pack(expand=TRUE, fill=BOTH)
-
-image_fonepay = PhotoImage(file="fonepay.png")
+# we have created 2nd frame here  to put the label on it and then add scrollbar to this frame
 
 
-fonepay_label = Label(fonepay_frame, bg="white",  width=desired_width, height=75, image=image_fonepay,anchor=W)
-fonepay_label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
 
-fonepay_2label = Label(fonepay_frame, bg="red",  width=desired_width, height=2, text="Please Pay Here.",font=("Poppins", 20,"bold"),fg="white", anchor=CENTER)
-fonepay_2label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
+second_label = Label(frame,  width=500, height=500, bg="#53D3D1",anchor=CENTER)
+second_label.pack(side = TOP, expand=False, fill=BOTH) 
 
-
-#----------------------creating paymetn method--------------------------
-fonepaylabel = Label(fonepay_frame, bg="#53D3D1",  width=desired_width, height=500, anchor=CENTER)
-fonepaylabel.pack(side = TOP, expand=False, fill=Y,padx=10)
-
-fonepay = Label(fonepaylabel,bg="#53D3D1")
-fonepay.grid(row=3,column=3, padx=40, pady=20)
+message=Message(second_label,text="Choose Bus for your travel ",bg="#53D3D1",fg="black", width=500,font=("Poppins", 40, "bold"))
+message.pack (side=TOP,padx=100)
 
 
-def temp_1sttext(e):
-    fonepay_entry.delete(1.0, "end-1c")
-fonepay_entry = Text(fonepay, width=30, height=2,highlightbackground="red",highlightthickness=2, bd=2)
-fonepay_entry.grid(row=3, column=6, padx=40, pady=20)
-fonepay_entry.insert(1.0,"Enter phone number")
-fonepay_entry.bind("<FocusIn>",temp_1sttext)
-
-
-def temp_2ndtext(e):
-    fonepay_password_entry.delete(1.0, "end-1c")
-fonepay_password_entry= Text(fonepay, width=30, height=2,highlightbackground="red",highlightthickness=2, bd=2)
-fonepay_password_entry.grid(row=3, column=9, padx=40, pady=20)
-fonepay_password_entry.insert(1.0,"Enter your your password")
-fonepay_password_entry.bind("<FocusIn>",temp_2ndtext)
-
-def temp_3rdtext(e):
-    fonepay_payment_entry.delete(1.0, "end-1c")
-fonepay_payment_entry= Text(fonepay, width=30, height=2,highlightbackground="red",highlightthickness=2, bd=2)
-fonepay_payment_entry.grid(row=3, column=12 , padx=40, pady=20)
-fonepay_payment_entry.insert(1.0,"Enter value")
-fonepay_payment_entry.bind("<FocusIn>",temp_3rdtext)
-
-fonepay_3label = Label(fonepay_frame, bg="#53D3D1",  width=desired_width, height=2, text="Please don't forget to write your name in remarks.",font=("Poppins", 20,"bold"),fg="black", anchor=CENTER)
-fonepay_3label.pack(side = TOP, expand=False, fill=BOTH,padx=10)
-
-#----------------creating update buttons----------------------------
-buttons_label = Label(fonepay_frame, bg="#53D3D1",  width=desired_width, height=75)
-buttons_label.pack(side = TOP,padx=10)
-
-def khalti_payment():
-    result=messagebox.askokcancel("payment","Are you sure you ?")
+def change():
+    result=messagebox.askyesno("Log out","Are you sure you want to log out?")
     if result:
         print("User clicked OK")
         root.destroy()
-        import khalti
-         
+        import first
+        
     else:
         print("User clicked Cancel")
 
 
-image_khalti = PhotoImage(file="khalti1.png")
+#-------------------------------------CREATINGG BUTTON--------------------------------------------
 
-desired_1width=100
-desired_1height=50
+desired_width2 = 150
+desired_height2 = 50 
+
+frame1 = Frame(frame, width= desired_width, height= desired_height ,bg="#53D3D1", highlightbackground="black", highlightthickness=0)
+frame1.pack( padx=(50,50), pady=75)
+
+def choose(text,button):
+    result=messagebox.askokcancel("",f"Are you sure you want to choose this buss {text}")
+    if result:
+        print("User clicked OK")
+        combo.set(text)
+        button.configure(bg="red", fg="yellow")
+    else:
+        print("User clicked Cancel")
+   
 
 
-x_1subsample_factor = max(int(image_khalti.width()/desired_1width), 1)
-y_1subsample_factor = max(int(image_khalti.height()/desired_1height), 1)
+message_label= Label(frame1, width=desired_width, bg="#53D3D1",height=desired_height,borderwidth=1)
+message_label.pack(side = TOP, anchor=CENTER,expand=False, fill=BOTH)
 
-resized_1image = image_khalti.subsample(x_1subsample_factor, y_1subsample_factor)
 
-khalti_button=Button(buttons_label,image=resized_1image, bg="white",width=150,height=75,fg='black',compound=LEFT,command=khalti_payment)
-khalti_button.pack(side=LEFT,pady=10)
+fare_message=Message(message_label,text="Fare", font=("Poppins", 20, "bold"),fg="black",bg="#53D3D1", width=250)
+fare_message.pack(side=LEFT,padx=(100,200),pady=8)
 
-#--------------------------------creating message------------------------------
-or_message=Message(buttons_label,text="OR",font=('poppins',14,"bold"),bg="#53D3D1",fg='black')
-or_message.pack(side=LEFT)
-#----------------------creating update button for esewa---------------------
-def esewa_payment():
-    result=messagebox.askokcancel("payment","Are you sure you ?")
+
+departure_message=Message(message_label,text="Departure", font=("Poppins", 20, "bold"),fg="black",bg="#53D3D1", width=250)
+departure_message.pack(side=LEFT, padx=20, pady=8, anchor=CENTER)
+
+bus_message=Message(message_label,text="Bus type", font=("Poppins", 20, "bold"),fg="black",bg="#53D3D1", width=250)
+bus_message.pack(side=RIGHT,padx=(100,160),pady=8)
+
+
+# ----------------------------------------creating first label for button----------------------------------
+button_label=Label(frame1, width=desired_width, height=desired_height,bg="#002447",highlightbackground="black",highlightthickness=1)
+button_label.pack(side = TOP)
+
+bus3_button=Label(button_label,text="rs:650", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
+bus3_button.pack(side=LEFT,padx=(0,35),pady=8)
+
+bus2_button=Label(button_label,text="6:30 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
+bus2_button.pack(side=LEFT,padx=0,pady=8)
+
+seat_text1="Tourist travels "
+bus_button=Button(button_label,text="Tourist travels ", bg='#EE6C4D', fg="white",font=("Poppins", 14,"bold") ,cursor = "hand2",command=lambda:choose(seat_text1,bus_button),height=3, width=30,borderwidth=0)
+bus_button.pack(side=RIGHT,padx=(35,0),pady=1)
+# ---------------------------------------creating second label for button--------------------------------------------
+second_button= Label(frame1, width=desired_width, height=desired_height,bg="#002447",highlightbackground="black",highlightthickness=1)
+second_button.pack(side = TOP)
+
+bus6_button=Label(second_button,text="rs:7500", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
+bus6_button.pack(side=LEFT,padx=(0,35),pady=8)
+
+bus5_button=Label(second_button,text="4:00 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
+bus5_button.pack(side=LEFT,padx=0,pady=8)
+
+
+seat_text2="legend Gorkha "
+bus4_button=Button(second_button,text="Legend Gorkha ", bg='#EE6C4D', fg="white",font=("Poppins", 14,"bold") ,cursor = "hand2",command=lambda:choose(seat_text2,bus4_button),height=3, width=30,borderwidth=0)
+bus4_button.pack(side=RIGHT,padx=(35,0),pady=8)
+
+# ----------------------------------------creating third label for button------------------------------------------------------
+third_button= Label(frame1, width=desired_width, height=desired_height,bg="#002447",highlightbackground="black",highlightthickness=1)
+third_button.pack(side = TOP)
+
+
+bus9_button=Label(third_button,text="rs.700", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
+bus9_button.pack(side=LEFT,padx=(0,35),pady=8)
+
+bus8_button=Label(third_button,text="12:30 PM", bg='#002447', fg="white",font=("Poppins", 14,"bold") ,height=3, width=30,borderwidth=0)
+bus8_button.pack(side=LEFT,padx=0,pady=8)
+
+seat_text3="Nepal travels "
+bus7_button=Button(third_button,text="Nepal travels ", bg='#EE6C4D', fg="white",font=("Poppins", 14,"bold"),cursor = "hand2",command=lambda:choose(seat_text1,bus7_button),height=3, width=30,borderwidth=0)
+bus7_button.pack(side=RIGHT,padx=(35,0),pady=8)
+
+fourth_button= Label(frame1,bg='#53D3D1', width=desired_width, height=desired_height)
+fourth_button.pack(side = TOP, expand=False, fill=BOTH)
+#---------------------------------------creating a button for change in plan-------------------------
+def change():
+    result=messagebox.askyesno("change","Are you sure you want to change plan?")
     if result:
         print("User clicked OK")
         root.destroy()
-        import esewa
+        import first
+        
     else:
         print("User clicked Cancel")
 
-image_esewa= PhotoImage(file="esewa.png")
-esewa_button=Button(buttons_label,bg="#FBECEB",image=image_esewa, width=150,height=75,fg='black', pady=10,command=esewa_payment)
-esewa_button.pack(side=LEFT,pady=10)
 
-#----------------------creating conformation button---------------------
-def boarding_pass():
-    result=messagebox.askokcancel("payment","Are you sure you ?")
-    if result:
-        print("User clicked OK")
-        root.destroy()
-        import boarding_pass
-    else:
-        print("User clicked Cancel")
+frame2=Label(fourth_button,bg="#53D3D1",  width=desired_width, height=desired_height)
+frame2.pack(side = RIGHT, expand=False, fill=BOTH)
+frame2.pack(pady=7)
 
-confrim_button=Button(buttons_label,bg="#FBECEB",text="CONFRIM", width=15,height=3,fg='black', font=("Poppins", 14,"bold"),command=boarding_pass)
-confrim_button.pack(side=RIGHT,padx=(150,0))
+change_button = Button(frame2, text="change in plan?", bg="#FEB249",cursor = "hand2",font=("Poppins", 14,"bold") ,height=3, width=16,command=change,activebackground="red")
+change_button.pack(side=RIGHT,pady=9)
+# ttk.Label(frame2, text = "Your bus :",background="#53D3D1" ,font = ("Poppins", 18,"bold"), ).pack()
+# combo = ttk.Combobox(frame2, values=["Legend Gorkha","Nepal travels ","Tourist travels "], state='readonly')
+# combo.pack()
+# def option_selected(event):
+   
+#    selected_option = combo.get()
+#    print("You selected:", selected_option)
+# combo.bind("<<ComboboxSelected>>", option_selected)
+
+# def change():
+#     selected_option = combo.get()
+#     result=messagebox.askyesno("change",f"Are you sure you want Buy {selected_option} ?")
+#     if result:
+#         print("User clicked OK")
+#         root.destroy()
+#         import payment_method
+#     else:
+#         print("User clicked Cancel")
+# buy_button = Button(frame2 ,text="Buy ticket?", bg="#FEB249",cursor = "hand2",font=("Poppins", 14,"bold") ,height=3, width=16,command=change,activebackground="red")
+# buy_button.pack(side=RIGHT)
+
 root.mainloop()

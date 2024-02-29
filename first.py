@@ -111,7 +111,7 @@ b5_entry.bind("<<ComboboxSelected>>", on_dest_select)
 
 #-------------------------------------------date-time-text-box---------------------------------
 
-b6 = Label(f, text="Travel Date",bg="#53D3D1",font=custom_font, width=30, height=2)
+b6= Label(f, text="Travel Date",bg="#53D3D1",font=custom_font, width=30, height=2)
 b6.grid(row=4, column=0, padx=40)
 
 #datebutton
@@ -129,7 +129,7 @@ def search():
     going_destination = b5_entry.get()
     travel_date = b6_entry.get()
 
-    if leaving_from == 'Leaving from?' or going_destination == 'Choose your destination' or travel_date == ' -------Date-------':
+    if leaving_from == 'Leaving from?' or going_destination == 'Choose your destination' or travel_date == '            -------Date-------':
         messagebox.showerror("Error", "Please select valid options for Leaving from, Destination, and Travel Date.")
     elif leaving_from == going_destination:
         messagebox.showerror("Error", "Please choose different options for Leaving from and Destination.")
@@ -166,10 +166,6 @@ def search():
         else:
             print("User clicked no")
 
-#-------------------------------------------date-time-text-box---------------------------------
-
-b6_entry= Label(f, text="Travel Date",bg="#53D3D1", font=custom_font)
-b6_entry.grid(row=4, column=0, padx=40, pady=20)
 
 def search():
     result=messagebox.askyesno('',"Are you sure you want to choose this route ")
