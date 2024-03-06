@@ -121,14 +121,6 @@ qr_img= Label(detail_label, image = resized_image2,background="white" ).grid(row
 #-------------------asking user how do they want to save passs--------------------------
 btn_label=Label(f,bg="#53D3D1",width=100,height=100)
 btn_label.pack(side=RIGHT)
-def download():
-    result=messagebox.askyesnocancel("Download","Do You Want To Download The Pass?")
-    if result:
-        print("User clicked OK")
-    else:
-        print("User clicked Cancel")
-download_button=Button(btn_label,text="Download",bg="#FEB249",cursor = "hand2",font=("Poppins", 14,"bold") ,height=3, width=16,command=download,activebackground="red")
-download_button.pack(side=RIGHT,anchor=CENTER)
 
 def email():
     result=messagebox.askokcancel('Email', "Your pass have been send to your provided email address \n Thank you!!")
@@ -138,8 +130,15 @@ def email():
     else:
         print("User clicked Cancel")
 
+
 send_button=Button(btn_label, text="Send it to email", bg="#FEB249",cursor = "hand2",font=("Poppins", 14,"bold") ,height=3, width=16,command=email,activebackground="red")
 send_button.pack(side=RIGHT)
 
+def back(*args):
+    root.destroy()
+    import rate
+
+rating_button = Button(btn_label, text="Give us a rating", bg="#FEB249", font=("Poppins", 14, "bold"), height=3, width=16,command=back)
+rating_button.pack()
 
 root.mainloop()

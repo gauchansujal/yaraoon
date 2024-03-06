@@ -33,7 +33,7 @@ def authenticate_user():
     else:
         messagebox.showerror("Error", "Invalid username or password")
     root.destroy()
-    import payment_method
+    import first
 
 
 root=Tk()
@@ -86,3 +86,7 @@ sign_up = Button(frame,width=6,text='New here?', border=0,bg='white' ,cursor='ha
 sign_up.place(x=255,y=250)
 
 root.mainloop()
+
+
+
+

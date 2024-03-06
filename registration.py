@@ -75,7 +75,7 @@ def register_user():
 
 
 root = Tk()
-root.title('Login')
+root.title('Registration')
 root.geometry('700x500+300+150')
 root.configure(bg="#fff")
 root.resizable(False, False)

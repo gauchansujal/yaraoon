@@ -7,7 +7,7 @@ import mysql.connector
 root = Tk()
 root.geometry("1200x1000")
 
-frame = Frame(root, highlightbackground="black", highlightthickness=2, bd=2)
+frame = Frame(root, bg="#53D3D1",highlightbackground="black", highlightthickness=2, bd=2)
 frame.pack(expand=TRUE, fill=BOTH)
 
 
@@ -19,7 +19,7 @@ desired_height = 75
 
 resized_image = image.subsample(int(image.width()/desired_width), int(image.height()/desired_height))
 
-label = Label(frame, bg='#4aa9ed',  width=desired_width, height=100, image = resized_image, anchor=W)
+label = Label(frame, bg='#53D3D1',  width=desired_width, height=100, image = resized_image, anchor=W)
 label.pack(side = TOP, expand=False, fill=BOTH)
 label.pack_propagate(False)
 label.pack(pady=7)
@@ -48,7 +48,7 @@ def service_showinfo():
 button = Button(label, text="service",height=10,width=15, bg="#D3D3D3",cursor = "  hand2",font=('Inter',10,"bold"), command=service_showinfo)
 button.pack(side=RIGHT, padx=(0,30),pady=25)
 
-f = Frame(frame, width= 500, height=500, highlightbackground="black", highlightthickness=2, bd=0)
+f = Frame(frame, width= 500, height=500,bg="#53D3D1", highlightbackground="black", highlightthickness=2, bd=0)
 f.pack( side= RIGHT, fill=Y)
 
 custom_font= ("Helvetica", 20)
@@ -84,7 +84,7 @@ def save_selected_dest(selected_dest):
 
 #----------------------text-box----------------------------------------------------
 
-b4 = Label(f, text="leaving from ?", font=custom_font)
+b4 = Label(f, text="leaving from ?", bg="#53D3D1",font=custom_font)
 b4.grid(row=0, column=0, padx=20, pady=22)
 
 leaving=['Kathmandu','Pokhara','Birgunj','Biratnagar','Dhangadi','Bhairawa','Chitwan',]
@@ -96,7 +96,7 @@ b4_entry.bind("<<ComboboxSelected>>", on_leave_select)
 
 #-------------------------------------------second-text-box---------------------------------
 
-b5 = Label(f, text="going destination", font=custom_font)
+b5 = Label(f, text="going destination", bg="#53D3D1",font=custom_font)
 b5.grid(row=2, column=0, padx=40, pady=20)
 
 destination=['Pokhara','Birgunj','Biratnagar','Dhangadi','Bhairawa','Chitwan','Kathmandu']
@@ -109,11 +109,11 @@ b5_entry.bind("<<ComboboxSelected>>", on_dest_select)
 
 #-------------------------------------------date-time-text-box---------------------------------
 
-b6 = Label(f, text="Travel Date", font=custom_font)
+b6 = Label(f, text="Travel Date", bg="#53D3D1",font=custom_font)
 b6.grid(row=4, column=0, padx=40, pady=20)
 
 #datebutton
-date=['2024/2/24','2024/2/25','2024/2/26','2024/2/27','2024/2/28','2024/2/29','2024/3/01','2024/3/02']
+date=['2024/3/01','2024/3/02','2024/3/03','2024/3/04','2024/3/05','2024/3/06','2024/3/07']
 b6_entry = ttk.Combobox(f, values=date, width=25, height=10, font=20,state="readonly")
 b6_entry.set('            -------Date-------')
 b6_entry.grid(row=5, column=0, padx=40, pady=10)  
@@ -171,12 +171,12 @@ b7.grid(row=7, column=0, padx=0, pady=40)
 image_path_2= r"bus.png"
 image = PhotoImage(file = image_path_2)
 
-g = Frame(frame, width=500, height=500, highlightbackground="black", highlightthickness=2)
+g = Frame(frame, bg="#53D3D1",width=500, height=500)
 g.pack(expand=TRUE, fill=BOTH)
 
 
 
-rrr = Label(g, image=image)
+rrr = Label(g,bg="#53D3D1", image=image)
 rrr.pack()
 
 root.mainloop()
